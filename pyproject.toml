@@ -23,12 +23,12 @@ dependencies = [
 docs = [
   "mkdocs-material>=9.5,<10",
   "mkdocs-minify-plugin>=0.8,<1",
+  "nbformat>=5.10,<6",
 ]
 notebooks = [
   "jupyter>=1.0,<2",
   "matplotlib>=3.8,<4",
   "nbclient>=0.10,<1",
-  "nbformat>=5.10,<6",
   "scanpy>=1.10,<2",
 ]
 dev = [

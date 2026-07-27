@@ -8,9 +8,11 @@ on:
       - "docs/**"
       - "catalog/**"
       - "scripts/generate_catalog.py"
+      - "scripts/validate_catalog.py"
       - "scripts/render_notebooks.py"
       - "scripts/audit_site.py"
       - "notebooks/**"
+      - "pyproject.toml"
       - "mkdocs.yml"
       - ".github/workflows/pages.yml"
 
