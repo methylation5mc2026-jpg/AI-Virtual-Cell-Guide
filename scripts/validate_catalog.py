@@ -23,6 +23,7 @@ CATALOG_FILES = (
     "tools-courses-orgs.yml",
 )
 EXPECTED_KINDS = {Path(name).stem for name in CATALOG_FILES}
+PROJECT_TIMEZONE = dt.timezone(dt.timedelta(hours=8), name="Asia/Shanghai")
 
 
 def _is_https_url(value: str) -> bool:
@@ -33,6 +34,7 @@ def _is_https_url(value: str) -> bool:
 def validate_catalog() -> list[str]:
     errors: list[str] = []
     seen_ids: set[str] = set()
+    project_today = dt.datetime.now(PROJECT_TIMEZONE).date()
     found_kinds: set[str] = set()
 
     schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
@@ -68,12 +70,12 @@ def validate_catalog() -> list[str]:
                 seen_ids.add(entry_id)
 
             year = entry.get("year")
-            if isinstance(year, int) and year > dt.date.today().year:
+            if isinstance(year, int) and year > project_today.year:
                 errors.append(f"{filename}:{entry_id}: year is in the future")
             verified = entry.get("last_verified")
             try:
                 verified_date = dt.date.fromisoformat(str(verified))
-                if verified_date > dt.date.today():
+                if verified_date > project_today:
                     errors.append(f"{filename}:{entry_id}: last_verified is in the future")
             except ValueError:
                 pass
