@@ -23,7 +23,7 @@ entries:
     paper: https://doi.org/10.1101/2023.10.30.563174
     code: https://github.com/chanzuckerberg/cellxgene-census
     weights: null
-    data: https://registry.opendata.aws/cellxgene-census/
+    data: https://chanzuckerberg.github.io/cellxgene-census/
     project: https://chanzuckerberg.github.io/cellxgene-census/
   publication_status: technical-report
   reproducibility: code-and-data

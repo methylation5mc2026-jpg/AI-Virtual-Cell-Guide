@@ -155,7 +155,7 @@ entries:
     paper: https://doi.org/10.1038/s41587-023-01933-2
     code: https://github.com/openproblems-bio/openproblems
     weights: null
-    data: https://openproblems.bio/competitions/neurips_2021/
+    data: https://openproblems.bio/events/2021-09_neurips
     project: https://openproblems.bio/events/2021-09_neurips
   publication_status: peer-reviewed
   reproducibility: code-and-data

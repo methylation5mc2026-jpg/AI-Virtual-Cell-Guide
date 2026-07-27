@@ -106,7 +106,7 @@ last_reviewed: 2026-07-28
     <dt>扰动</dt><dd>none</dd>
     <dt>物种/背景</dt><dd>human, mouse；多组织、疾病和研究来源</dd>
   </dl>
-  <div class="resource-card__links"><a class="resource-link" href="https://doi.org/10.1101/2023.10.30.563174" rel="noopener">论文</a> <a class="resource-link" href="https://github.com/chanzuckerberg/cellxgene-census" rel="noopener">代码</a> <a class="resource-link" href="https://registry.opendata.aws/cellxgene-census/" rel="noopener">数据</a> <a class="resource-link" href="https://chanzuckerberg.github.io/cellxgene-census/" rel="noopener">主页</a></div>
+  <div class="resource-card__links"><a class="resource-link" href="https://doi.org/10.1101/2023.10.30.563174" rel="noopener">论文</a> <a class="resource-link" href="https://github.com/chanzuckerberg/cellxgene-census" rel="noopener">代码</a> <a class="resource-link" href="https://chanzuckerberg.github.io/cellxgene-census/" rel="noopener">数据</a> <a class="resource-link" href="https://chanzuckerberg.github.io/cellxgene-census/" rel="noopener">主页</a></div>
   <details class="resource-card__details">
     <summary>复现条件、许可证与限制</summary>
     <ul>

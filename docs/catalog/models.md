@@ -241,7 +241,7 @@ last_reviewed: 2026-07-28
     <dt>扰动</dt><dd>none</dd>
     <dt>物种/背景</dt><dd>human；CELLxGENE Census等大规模人类细胞</dd>
   </dl>
-  <div class="resource-card__links"><a class="resource-link" href="https://doi.org/10.1101/2024.11.28.625303" rel="noopener">论文</a> <a class="resource-link" href="https://github.com/genbio-ai/AIDO" rel="noopener">代码</a> <a class="resource-link" href="https://huggingface.co/genbio-ai/AIDO.Cell-100M" rel="noopener">权重</a> <a class="resource-link" href="https://cellxgene.cziscience.com/census" rel="noopener">数据</a> <a class="resource-link" href="https://virtualcellmodels.cziscience.com/model/aido-cell" rel="noopener">主页</a></div>
+  <div class="resource-card__links"><a class="resource-link" href="https://doi.org/10.1101/2024.11.28.625303" rel="noopener">论文</a> <a class="resource-link" href="https://github.com/genbio-ai/AIDO" rel="noopener">代码</a> <a class="resource-link" href="https://huggingface.co/genbio-ai/AIDO.Cell-100M" rel="noopener">权重</a> <a class="resource-link" href="https://chanzuckerberg.github.io/cellxgene-census/" rel="noopener">数据</a> <a class="resource-link" href="https://virtualcellmodels.cziscience.com/model/aido-cell" rel="noopener">主页</a></div>
   <details class="resource-card__details">
     <summary>复现条件、许可证与限制</summary>
     <ul>

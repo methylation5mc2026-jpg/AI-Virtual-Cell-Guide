@@ -357,7 +357,7 @@ entries:
     paper: https://doi.org/10.1101/2024.11.28.625303
     code: https://github.com/genbio-ai/AIDO
     weights: https://huggingface.co/genbio-ai/AIDO.Cell-100M
-    data: https://cellxgene.cziscience.com/census
+    data: https://chanzuckerberg.github.io/cellxgene-census/
     project: https://virtualcellmodels.cziscience.com/model/aido-cell
   publication_status: preprint
   reproducibility: weights-and-code

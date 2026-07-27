@@ -269,7 +269,7 @@ last_reviewed: 2026-07-28
     <dt>扰动</dt><dd>none</dd>
     <dt>物种/背景</dt><dd>human；PBMC和骨髓多组学数据</dd>
   </dl>
-  <div class="resource-card__links"><a class="resource-link" href="https://doi.org/10.1038/s41587-023-01933-2" rel="noopener">论文</a> <a class="resource-link" href="https://github.com/openproblems-bio/openproblems" rel="noopener">代码</a> <a class="resource-link" href="https://openproblems.bio/competitions/neurips_2021/" rel="noopener">数据</a> <a class="resource-link" href="https://openproblems.bio/events/2021-09_neurips" rel="noopener">主页</a></div>
+  <div class="resource-card__links"><a class="resource-link" href="https://doi.org/10.1038/s41587-023-01933-2" rel="noopener">论文</a> <a class="resource-link" href="https://github.com/openproblems-bio/openproblems" rel="noopener">代码</a> <a class="resource-link" href="https://openproblems.bio/events/2021-09_neurips" rel="noopener">数据</a> <a class="resource-link" href="https://openproblems.bio/events/2021-09_neurips" rel="noopener">主页</a></div>
   <details class="resource-card__details">
     <summary>复现条件、许可证与限制</summary>
     <ul>

@@ -57,4 +57,4 @@ last_reviewed: 2026-07-28
 
 - [AIVC 愿景论文](https://doi.org/10.1016/j.cell.2024.11.015)
 - [Arc Virtual Cell Initiative](https://arcinstitute.org/virtual-cell-initiative)
-- [Active learning in the life sciences review](https://doi.org/10.1038/s41573-021-00227-9)
+- [Active-learning strategies in computer-assisted drug discovery](https://doi.org/10.1016/j.drudis.2014.12.004)

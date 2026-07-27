@@ -185,7 +185,7 @@ entries:
   - human
   context: 药物与遗传扰动的高通量单细胞筛选
   links:
-    paper: https://doi.org/10.15252/msb.202110270
+    paper: https://doi.org/10.15252/msb.202211517
     code: https://github.com/theislab/cpa
     weights: null
     data: null
@@ -219,7 +219,7 @@ entries:
   context: K562、RPE1等细胞系的大规模基因敲低
   links:
     paper: https://doi.org/10.1016/j.cell.2022.05.013
-    code: https://github.com/satijalab/perturb-seq
+    code: null
     weights: null
     data: https://gwps.wi.mit.edu/
     project: https://pubmed.ncbi.nlm.nih.gov/35688146/
@@ -798,7 +798,7 @@ entries:
     code: null
     weights: null
     data: null
-    project: https://www.cellpainting.org/
+    project: https://broadinstitute.github.io/cellpainting-gallery/overview.html
   publication_status: peer-reviewed
   reproducibility: documentation-only
   recommendation: recommended

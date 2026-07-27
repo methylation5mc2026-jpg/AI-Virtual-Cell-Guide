@@ -59,4 +59,4 @@ Arc 2025 的复盘再次说明，简单统计与混合方案可能比纯深度�
 
 - [Arc Virtual Cell Challenge 2025 复盘](https://arcinstitute.org/news/virtual-cell-challenge-2025-wrap-up)
 - [scVI](https://doi.org/10.1038/s41592-018-0229-2)
-- [Simple controls for perturbation prediction](https://doi.org/10.1101/2025.01.16.633497)
+- [Simple controls for perturbation prediction](https://pmc.ncbi.nlm.nih.gov/articles/PMC12202205/)

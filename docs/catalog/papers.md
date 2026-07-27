@@ -108,7 +108,7 @@ last_reviewed: 2026-07-28
     <dt>扰动</dt><dd>genetic-knockdown</dd>
     <dt>物种/背景</dt><dd>human；K562、RPE1等细胞系的大规模基因敲低</dd>
   </dl>
-  <div class="resource-card__links"><a class="resource-link" href="https://doi.org/10.1016/j.cell.2022.05.013" rel="noopener">论文</a> <a class="resource-link" href="https://github.com/satijalab/perturb-seq" rel="noopener">代码</a> <a class="resource-link" href="https://gwps.wi.mit.edu/" rel="noopener">数据</a> <a class="resource-link" href="https://pubmed.ncbi.nlm.nih.gov/35688146/" rel="noopener">主页</a></div>
+  <div class="resource-card__links"><a class="resource-link" href="https://doi.org/10.1016/j.cell.2022.05.013" rel="noopener">论文</a> <a class="resource-link" href="https://gwps.wi.mit.edu/" rel="noopener">数据</a> <a class="resource-link" href="https://pubmed.ncbi.nlm.nih.gov/35688146/" rel="noopener">主页</a></div>
   <details class="resource-card__details">
     <summary>复现条件、许可证与限制</summary>
     <ul>
@@ -540,7 +540,7 @@ last_reviewed: 2026-07-28
     <dt>扰动</dt><dd>chemical</dd>
     <dt>物种/背景</dt><dd>human；药物与遗传扰动的高通量单细胞筛选</dd>
   </dl>
-  <div class="resource-card__links"><a class="resource-link" href="https://doi.org/10.15252/msb.202110270" rel="noopener">论文</a> <a class="resource-link" href="https://github.com/theislab/cpa" rel="noopener">代码</a> <a class="resource-link" href="https://cpa-tools.readthedocs.io/" rel="noopener">主页</a></div>
+  <div class="resource-card__links"><a class="resource-link" href="https://doi.org/10.15252/msb.202211517" rel="noopener">论文</a> <a class="resource-link" href="https://github.com/theislab/cpa" rel="noopener">代码</a> <a class="resource-link" href="https://cpa-tools.readthedocs.io/" rel="noopener">主页</a></div>
   <details class="resource-card__details">
     <summary>复现条件、许可证与限制</summary>
     <ul>
@@ -648,7 +648,7 @@ last_reviewed: 2026-07-28
     <dt>扰动</dt><dd>genetic-knockout, chemical</dd>
     <dt>物种/背景</dt><dd>human；培养细胞高内涵成像筛选</dd>
   </dl>
-  <div class="resource-card__links"><a class="resource-link" href="https://doi.org/10.1038/nprot.2016.105" rel="noopener">论文</a> <a class="resource-link" href="https://www.cellpainting.org/" rel="noopener">主页</a></div>
+  <div class="resource-card__links"><a class="resource-link" href="https://doi.org/10.1038/nprot.2016.105" rel="noopener">论文</a> <a class="resource-link" href="https://broadinstitute.github.io/cellpainting-gallery/overview.html" rel="noopener">主页</a></div>
   <details class="resource-card__details">
     <summary>复现条件、许可证与限制</summary>
     <ul>

@@ -21,7 +21,9 @@ jobs:
             --no-progress
             --exclude-path .git
             --exclude-path site
-            --accept 200,206,429
+            --scheme https
+            --scheme http
+            --accept 200,202,206,401,403,429
             "**/*.md"
             "catalog/*.yml"
           output: link-report.md

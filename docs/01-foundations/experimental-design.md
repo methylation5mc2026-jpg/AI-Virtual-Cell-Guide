@@ -59,5 +59,5 @@ last_reviewed: 2026-07-28
 ## 一手来源
 
 - [Nature Methods：单细胞差异表达中的伪重复](https://doi.org/10.1038/s41467-021-21038-1)
-- [sc-best-practices：实验设计与批次](https://www.sc-best-practices.org/conditions/experimental_design.html)
+- [sc-best-practices：scRNA-seq 实验设计](https://www.sc-best-practices.org/introduction/scrna_seq.html)
 - [Arc Virtual Cell Challenge：按扰动划分的真实评测](https://github.com/ArcInstitute/arc-virtual-cell-atlas/tree/main/virtual-cell-challenge)

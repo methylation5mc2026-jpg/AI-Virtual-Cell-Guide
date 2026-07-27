@@ -46,4 +46,4 @@ last_reviewed: 2026-07-28
 
 - [scIB integration benchmark](https://doi.org/10.1038/s41592-021-01336-8)
 - [CELLxGENE Census](https://chanzuckerberg.github.io/cellxgene-census/)
-- [SCimilarity](https://doi.org/10.1038/s41587-025-02642-y)
+- [SCimilarity](https://doi.org/10.1038/s41586-024-08411-y)
