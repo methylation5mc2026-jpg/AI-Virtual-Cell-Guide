@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://methylation5mc2026-jpg.github.io/AI-Virtual-Cell-Guide/catalog.schema.json",
+  "title": "AI Virtual Cell Guide catalog",
+  "description": "Canonical schema v2 for papers, models, datasets, benchmarks, tools, courses and organizations.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["catalog_version", "kind", "entries"],
+  "properties": {
+    "catalog_version": {"const": 2},
+    "kind": {
+      "enum": ["papers", "models", "datasets", "benchmarks", "tools-courses-orgs"]
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/entry"}
+    }
+  },
+  "$defs": {
+    "nonEmptyString": {"type": "string", "minLength": 1},
+    "stringList": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/nonEmptyString"}
+    },
+    "stringListAllowEmpty": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/nonEmptyString"}
+    },
+    "nullableHttps": {
+      "oneOf": [
+        {"type": "string", "format": "uri", "pattern": "^https://"},
+        {"type": "null"}
+      ]
+    },
+    "links": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["paper", "code", "weights", "data", "project"],
+      "properties": {
+        "paper": {"$ref": "#/$defs/nullableHttps"},
+        "code": {"$ref": "#/$defs/nullableHttps"},
+        "weights": {"$ref": "#/$defs/nullableHttps"},
+        "data": {"$ref": "#/$defs/nullableHttps"},
+        "project": {"$ref": "#/$defs/nullableHttps"}
+      }
+    },
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title_zh",
+        "title_en",
+        "year",
+        "category",
+        "summary_zh",
+        "tasks",
+        "modalities",
+        "perturbation_types",
+        "species",
+        "context",
+        "links",
+        "publication_status",
+        "reproducibility",
+        "recommendation",
+        "evidence_stage",
+        "license",
+        "compute",
+        "compute_tier",
+        "limitations",
+        "last_verified",
+        "verification_status"
+      ],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "title_zh": {"$ref": "#/$defs/nonEmptyString"},
+        "title_en": {"$ref": "#/$defs/nonEmptyString"},
+        "year": {"type": "integer", "minimum": 1900, "maximum": 2100},
+        "category": {"$ref": "#/$defs/nonEmptyString"},
+        "summary_zh": {"$ref": "#/$defs/nonEmptyString"},
+        "tasks": {"$ref": "#/$defs/stringList"},
+        "modalities": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "single-cell-general",
+              "scRNA-seq",
+              "scATAC-seq",
+              "protein",
+              "spatial-transcriptomics",
+              "imaging",
+              "multiome",
+              "bulk-omics",
+              "lineage"
+            ]
+          }
+        },
+        "perturbation_types": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "genetic-knockout",
+              "genetic-knockdown",
+              "genetic-activation",
+              "chemical",
+              "environmental",
+              "disease-state",
+              "none"
+            ]
+          }
+        },
+        "species": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "human",
+              "mouse",
+              "rat",
+              "zebrafish",
+              "drosophila",
+              "yeast",
+              "bacteria",
+              "multi-species",
+              "not-applicable"
+            ]
+          }
+        },
+        "context": {"$ref": "#/$defs/nonEmptyString"},
+        "links": {"$ref": "#/$defs/links"},
+        "publication_status": {
+          "enum": ["peer-reviewed", "preprint", "technical-report", "product"]
+        },
+        "reproducibility": {
+          "enum": [
+            "code-and-data",
+            "weights-and-code",
+            "code-only",
+            "data-only",
+            "documentation-only",
+            "closed"
+          ]
+        },
+        "recommendation": {"enum": ["core", "recommended", "reference"]},
+        "evidence_stage": {
+          "enum": [
+            "concept",
+            "in-silico",
+            "retrospective",
+            "prospective",
+            "deployed",
+            "not-applicable"
+          ]
+        },
+        "license": {"$ref": "#/$defs/nonEmptyString"},
+        "compute": {"$ref": "#/$defs/nonEmptyString"},
+        "compute_tier": {"enum": ["cpu", "single-gpu", "multi-gpu", "unknown"]},
+        "limitations": {"$ref": "#/$defs/nonEmptyString"},
+        "last_verified": {"type": "string", "format": "date"},
+        "verification_status": {
+          "enum": ["verified", "manual-review", "unreachable"]
+        }
+      }
+    }
+  }
+}

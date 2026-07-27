@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 620" role="img" aria-labelledby="title desc">
+  <title id="title">人工智能虚拟细胞评测矩阵</title>
+  <desc id="desc">按泛化轴与评测层级构成矩阵，强调从表达误差到真实实验</desc>
+  <defs><style>.h{font:700 22px Arial,sans-serif;fill:#133333}.b{font:16px Arial,sans-serif;fill:#42615d}.grid{fill:#fff;stroke:#b8d8d2;stroke-width:2}.strong{fill:#e5f5f1}.wet{fill:#eeeaff}</style></defs>
+  <rect width="1120" height="620" rx="28" fill="#f5fbfa"/>
+  <text x="560" y="48" text-anchor="middle" class="h">评测矩阵：先声明泛化轴，再选择指标与验证层级</text>
+  <g transform="translate(210 95)">
+    <rect width="180" height="70" class="grid strong"/><rect x="180" width="180" height="70" class="grid strong"/><rect x="360" width="180" height="70" class="grid strong"/><rect x="540" width="180" height="70" class="grid strong"/>
+    <text x="90" y="43" text-anchor="middle" class="h">表达重建</text><text x="270" y="43" text-anchor="middle" class="h">效应恢复</text><text x="450" y="43" text-anchor="middle" class="h">生物排序</text><text x="630" y="43" text-anchor="middle" class="h">实验验证</text>
+    <g class="grid">
+      <rect y="70" width="180" height="90"/><rect x="180" y="70" width="180" height="90"/><rect x="360" y="70" width="180" height="90"/><rect x="540" y="70" width="180" height="90" class="wet"/>
+      <rect y="160" width="180" height="90"/><rect x="180" y="160" width="180" height="90"/><rect x="360" y="160" width="180" height="90"/><rect x="540" y="160" width="180" height="90" class="wet"/>
+      <rect y="250" width="180" height="90"/><rect x="180" y="250" width="180" height="90"/><rect x="360" y="250" width="180" height="90"/><rect x="540" y="250" width="180" height="90" class="wet"/>
+      <rect y="340" width="180" height="90"/><rect x="180" y="340" width="180" height="90"/><rect x="360" y="340" width="180" height="90"/><rect x="540" y="340" width="180" height="90" class="wet"/>
+    </g>
+    <g class="b">
+      <text x="90" y="112" text-anchor="middle">MAE / 分布距离</text><text x="270" y="112" text-anchor="middle">Δ相关 / Top-DE</text><text x="450" y="112" text-anchor="middle">通路 / 靶点排序</text><text x="630" y="112" text-anchor="middle">重复实验</text>
+      <text x="90" y="202" text-anchor="middle">新扰动</text><text x="270" y="202" text-anchor="middle">方向与幅度</text><text x="450" y="202" text-anchor="middle">未见靶点优先级</text><text x="630" y="202" text-anchor="middle">命中率</text>
+      <text x="90" y="292" text-anchor="middle">新细胞背景</text><text x="270" y="292" text-anchor="middle">背景特异效应</text><text x="450" y="292" text-anchor="middle">疾病相关性</text><text x="630" y="292" text-anchor="middle">跨模型系统</text>
+      <text x="90" y="382" text-anchor="middle">新批次 / 平台</text><text x="270" y="382" text-anchor="middle">校准与覆盖</text><text x="450" y="382" text-anchor="middle">决策效用</text><text x="630" y="382" text-anchor="middle">前瞻闭环</text>
+    </g>
+  </g>
+  <g class="h">
+    <text x="105" y="215" text-anchor="middle">已见条件</text><text x="105" y="305" text-anchor="middle">扰动 OOD</text><text x="105" y="395" text-anchor="middle">背景 OOD</text><text x="105" y="485" text-anchor="middle">技术 OOD</text>
+  </g>
+  <text x="560" y="580" text-anchor="middle" class="b">单个高分不能替代矩阵覆盖；最强主张必须由最右侧证据支持</text>
+</svg>

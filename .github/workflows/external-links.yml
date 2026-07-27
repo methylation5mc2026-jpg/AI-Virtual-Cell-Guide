@@ -1,0 +1,34 @@
+name: External link maintenance report
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check external links without blocking content work
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --exclude-path .git
+            --exclude-path site
+            --accept 200,206,429
+            --output link-report.md
+            "**/*.md"
+            "catalog/*.yml"
+          fail: false
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: external-link-report
+          path: link-report.md
+          if-no-files-found: ignore

@@ -1,0 +1,30 @@
+{
+  "seed": 42,
+  "tolerance": {
+    "mae": 0.03,
+    "delta_pearson": 0.08,
+    "top_de_overlap": 0.08
+  },
+  "models": {
+    "control_mean": {
+      "mae": 0.3788617825,
+      "delta_pearson": 0.0,
+      "top_de_overlap": 0.4
+    },
+    "average_effect": {
+      "mae": 0.3059542477,
+      "delta_pearson": 0.5793335205,
+      "top_de_overlap": 0.55
+    },
+    "gene_identity_ridge": {
+      "mae": 0.3059542452,
+      "delta_pearson": 0.5793335550,
+      "top_de_overlap": 0.55
+    },
+    "label_hash_smoke_model": {
+      "mae": 0.3059135687,
+      "delta_pearson": 0.5793575067,
+      "top_de_overlap": 0.55
+    }
+  }
+}

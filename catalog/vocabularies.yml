@@ -1,0 +1,70 @@
+schema_version: 2
+
+modalities:
+  - single-cell-general
+  - scRNA-seq
+  - scATAC-seq
+  - protein
+  - spatial-transcriptomics
+  - imaging
+  - multiome
+  - bulk-omics
+  - lineage
+
+perturbation_types:
+  - genetic-knockout
+  - genetic-knockdown
+  - genetic-activation
+  - chemical
+  - environmental
+  - disease-state
+  - none
+
+species:
+  - human
+  - mouse
+  - rat
+  - zebrafish
+  - drosophila
+  - yeast
+  - bacteria
+  - multi-species
+  - not-applicable
+
+publication_statuses:
+  - peer-reviewed
+  - preprint
+  - technical-report
+  - product
+
+reproducibility_levels:
+  - code-and-data
+  - weights-and-code
+  - code-only
+  - data-only
+  - documentation-only
+  - closed
+
+recommendations:
+  - core
+  - recommended
+  - reference
+
+evidence_stages:
+  - concept
+  - in-silico
+  - retrospective
+  - prospective
+  - deployed
+  - not-applicable
+
+compute_tiers:
+  - cpu
+  - single-gpu
+  - multi-gpu
+  - unknown
+
+verification_statuses:
+  - verified
+  - manual-review
+  - unreachable

@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "如果本指南帮助了你的研究或教学，请引用此项目并注明使用的版本。"
+title: "AI Virtual Cell Guide"
+type: software
+version: 0.2.0-beta
+date-released: 2026-07-28
+repository-code: "https://github.com/methylation5mc2026-jpg/AI-Virtual-Cell-Guide"
+url: "https://methylation5mc2026-jpg.github.io/AI-Virtual-Cell-Guide/"
+license:
+  - Apache-2.0
+  - CC-BY-4.0
+authors:
+  - family-names: Contributors
+    given-names: AI Virtual Cell Guide
+abstract: "面向跨学科新人的人工智能虚拟细胞全景知识地图、结构化资源目录与可复现学习指南。"
+keywords:
+  - AI virtual cell
+  - single-cell
+  - multimodal biology
+  - perturbation prediction
+  - foundation model
+  - spatial omics

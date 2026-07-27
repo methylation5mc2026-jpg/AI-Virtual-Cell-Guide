@@ -1,0 +1,24 @@
+name: 内容纠错
+description: 报告事实、术语、引用、链接或教程问题
+title: "[Correction] "
+labels: ["correction"]
+body:
+  - type: input
+    id: location
+    attributes:
+      label: 位置
+      description: 文件路径、页面标题或目录条目 ID
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: 问题
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 建议修改与一手依据
+    validations:
+      required: true

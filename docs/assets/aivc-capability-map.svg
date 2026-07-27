@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 560" role="img" aria-labelledby="title desc">
+  <title id="title">人工智能虚拟细胞能力地图</title>
+  <desc id="desc">数据经过统一表征、状态预测和虚拟实验后返回真实实验形成闭环</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#087f6d"/>
+    </marker>
+    <style>
+      .box{fill:#fff;stroke:#b8d8d2;stroke-width:3}.head{font:700 25px Arial,sans-serif;fill:#133333}
+      .body{font:18px Arial,sans-serif;fill:#42615d}.arrow{stroke:#087f6d;stroke-width:5;fill:none;marker-end:url(#arrow)}
+      .tag{font:700 16px Arial,sans-serif;fill:#6d4aff}
+    </style>
+  </defs>
+  <rect width="1120" height="560" rx="28" fill="#f5fbfa"/>
+  <text x="560" y="48" text-anchor="middle" class="head">AI Virtual Cell：三项能力与实验闭环</text>
+  <rect x="45" y="100" width="220" height="240" rx="24" class="box"/>
+  <text x="155" y="145" text-anchor="middle" class="tag">INPUT</text>
+  <text x="155" y="184" text-anchor="middle" class="head">多尺度观测</text>
+  <text x="155" y="224" text-anchor="middle" class="body">RNA · ATAC · 蛋白</text>
+  <text x="155" y="256" text-anchor="middle" class="body">空间 · 成像 · 谱系</text>
+  <text x="155" y="288" text-anchor="middle" class="body">扰动 · 剂量 · 时间</text>
+  <rect x="325" y="100" width="220" height="240" rx="24" class="box"/>
+  <text x="435" y="145" text-anchor="middle" class="tag">CAPABILITY 1</text>
+  <text x="435" y="184" text-anchor="middle" class="head">统一表征</text>
+  <text x="435" y="224" text-anchor="middle" class="body">跨物种、模态与尺度</text>
+  <text x="435" y="256" text-anchor="middle" class="body">保留状态与不确定性</text>
+  <text x="435" y="288" text-anchor="middle" class="body">区分技术与生物变异</text>
+  <rect x="605" y="100" width="220" height="240" rx="24" class="box"/>
+  <text x="715" y="145" text-anchor="middle" class="tag">CAPABILITY 2</text>
+  <text x="715" y="184" text-anchor="middle" class="head">预测与模拟</text>
+  <text x="715" y="224" text-anchor="middle" class="body">功能 · 动态 · 响应</text>
+  <text x="715" y="256" text-anchor="middle" class="body">未见扰动与新背景</text>
+  <text x="715" y="288" text-anchor="middle" class="body">分布而非只有均值</text>
+  <rect x="885" y="100" width="190" height="240" rx="24" class="box"/>
+  <text x="980" y="145" text-anchor="middle" class="tag">CAPABILITY 3</text>
+  <text x="980" y="184" text-anchor="middle" class="head">虚拟实验</text>
+  <text x="980" y="224" text-anchor="middle" class="body">比较干预方案</text>
+  <text x="980" y="256" text-anchor="middle" class="body">生成可证伪假设</text>
+  <text x="980" y="288" text-anchor="middle" class="body">选择下一步实验</text>
+  <path d="M265 220h54M545 220h54M825 220h54" class="arrow"/>
+  <rect x="310" y="410" width="500" height="90" rx="22" fill="#eeeaff" stroke="#c8bcff" stroke-width="3"/>
+  <text x="560" y="448" text-anchor="middle" class="head">真实实验验证与反馈</text>
+  <text x="560" y="480" text-anchor="middle" class="body">阴性结果、失败扰动和新批次同样进入下一轮学习</text>
+  <path d="M980 340v113H820" class="arrow"/><path d="M310 455H155V350" class="arrow"/>
+</svg>

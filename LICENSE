@@ -1,0 +1,12 @@
+# Dual-license notice
+
+This repository uses two licenses:
+
+- Educational prose, diagrams, and the structured resource catalog are licensed
+  under Creative Commons Attribution 4.0 International. See
+  `LICENSE-CONTENT.md`.
+- Source code, notebooks, tests, and automation are licensed under Apache
+  License 2.0. See `LICENSE-CODE`.
+
+Third-party papers, datasets, model weights, names, and trademarks remain under
+their respective owners and licenses.

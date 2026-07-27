@@ -1,0 +1,3 @@
+* text=auto eol=lf
+*.ipynb text eol=lf
+*.svg text eol=lf

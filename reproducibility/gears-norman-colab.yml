@@ -1,0 +1,52 @@
+schema_version: 1
+run_id: gears-norman-colab-v0.2
+status: ready_for_external_gpu_run
+last_audited: 2026-07-28
+entrypoint: scripts/run_gears_norman.py
+notebook: notebooks/perturbation-response/gears-norman-colab.ipynb
+environment:
+  python: "3.11"
+  hardware: NVIDIA GPU with CUDA runtime
+  direct_dependencies:
+    cell-gears: "0.1.2"
+    cell-eval: "0.8.1"
+    anndata: "0.12.10"
+inputs:
+  dataset: Norman Perturb-seq
+  loader: gears.PertData.load(data_name="norman")
+  redistribution: false
+split:
+  method: simulation
+  seed: 1
+model:
+  name: GEARS
+  hidden_size: 64
+  smoke_epochs: 5
+metrics:
+  implementation: cell-eval
+  profile: vcc
+  expected_members:
+    - mae
+    - discrimination_score_l1
+    - overlap_at_N
+audited_upstreams:
+  - repository: https://github.com/snap-stanford/GEARS
+    commit: f374e43e197b295016d80395d7a54ddb81cc6769
+  - repository: https://github.com/ArcInstitute/arc-virtual-cell-atlas
+    commit: 76cb053d59be08a7d0c4dc68c265622f6e0ab52e
+  - repository: https://github.com/ArcInstitute/cell-eval
+    tag: v0.8.1
+    commit: cb708765aebdf71621d145abffa5bca99aff2c3e
+acceptance:
+  required_artifacts:
+    - run-manifest.yml
+    - gears_predicted_cells.h5ad
+    - gears_observed_cells.h5ad
+    - model/
+    - cell-eval/
+  local_cpu_ci: not_run
+  colab_gpu: pending_first_public_run
+limitations:
+  - A five-epoch smoke run is not a paper-level reproduction.
+  - Norman metadata does not establish independent biological replicates in this adapter.
+  - The official metric path requires cell-level distributions; aggregate means are rejected.

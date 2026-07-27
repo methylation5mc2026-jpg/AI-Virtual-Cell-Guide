@@ -1,0 +1,773 @@
+catalog_version: 2
+kind: models
+entries:
+- id: model-scvi
+  title_zh: scVI
+  title_en: single-cell Variational Inference
+  year: 2018
+  category: 概率生成模型
+  summary_zh: 以负二项等计数分布建模单细胞表达，是批次整合、潜在表示和下游生成模型的重要基线。
+  tasks:
+  - representation learning
+  - batch integration
+  - differential expression
+  modalities:
+  - scRNA-seq
+  perturbation_types:
+  - none
+  species:
+  - multi-species
+  context: 通用单细胞RNA测序
+  links:
+    paper: https://doi.org/10.1038/s41592-018-0229-2
+    code: https://github.com/scverse/scvi-tools
+    weights: null
+    data: null
+    project: https://scvi-tools.org/
+  publication_status: peer-reviewed
+  reproducibility: code-only
+  recommendation: core
+  evidence_stage: in-silico
+  license: BSD-3-Clause
+  compute: CPU可用于小数据；GPU推荐
+  compute_tier: single-gpu
+  limitations: 主要是观测数据的概率表征与整合，不是完整扰动状态转换模型。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: model-scgen
+  title_zh: scGen
+  title_en: scGen
+  year: 2019
+  category: 状态转换
+  summary_zh: 在VAE潜在空间应用扰动差向量，提供直观、轻量的跨细胞背景响应预测基线。
+  tasks:
+  - perturbation prediction
+  - cross-cell-type transfer
+  modalities:
+  - scRNA-seq
+  perturbation_types:
+  - none
+  species:
+  - human
+  - mouse
+  context: 刺激与疾病相关单细胞数据
+  links:
+    paper: https://doi.org/10.1038/s41592-019-0494-8
+    code: https://github.com/theislab/scgen
+    weights: null
+    data: null
+    project: https://scgen.readthedocs.io/
+  publication_status: peer-reviewed
+  reproducibility: code-only
+  recommendation: recommended
+  evidence_stage: in-silico
+  license: Apache-2.0
+  compute: CPU小数据或单GPU
+  compute_tier: single-gpu
+  limitations: 差向量可加性无法覆盖复杂、异质或强非线性响应。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: model-cpa
+  title_zh: CPA
+  title_en: Compositional Perturbation Autoencoder
+  year: 2021
+  category: 条件生成
+  summary_zh: 将基础细胞状态、扰动、剂量和协变量表示组合，用于未见条件的反事实响应预测。
+  tasks:
+  - drug response
+  - dose response
+  - combinatorial perturbation
+  modalities:
+  - scRNA-seq
+  perturbation_types:
+  - chemical
+  species:
+  - human
+  context: 遗传与化学扰动数据
+  links:
+    paper: https://doi.org/10.15252/msb.202211517
+    code: https://github.com/theislab/cpa
+    weights: null
+    data: null
+    project: https://cpa-tools.readthedocs.io/
+  publication_status: peer-reviewed
+  reproducibility: code-only
+  recommendation: recommended
+  evidence_stage: in-silico
+  license: BSD-3-Clause
+  compute: 单GPU推荐
+  compute_tier: single-gpu
+  limitations: 表示解耦和组合假设需通过未见背景与强基线验证。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: model-geneformer
+  title_zh: Geneformer
+  title_en: Geneformer
+  year: 2023
+  category: 单细胞基础模型
+  summary_zh: 以细胞内基因表达排序序列进行Transformer预训练，支持分类、网络和候选基因优先级等迁移任务。
+  tasks:
+  - cell classification
+  - gene network
+  - perturbation prioritization
+  modalities:
+  - scRNA-seq
+  perturbation_types:
+  - none
+  species:
+  - human
+  context: 大规模人类单细胞图谱
+  links:
+    paper: https://doi.org/10.1038/s41586-023-06139-9
+    code: https://huggingface.co/ctheodoris/Geneformer
+    weights: https://huggingface.co/ctheodoris/Geneformer
+    data: null
+    project: https://huggingface.co/ctheodoris/Geneformer
+  publication_status: peer-reviewed
+  reproducibility: weights-and-code
+  recommendation: recommended
+  evidence_stage: in-silico
+  license: 见官方模型卡
+  compute: 单GPU推理/微调；按模型版本调整显存
+  compute_tier: single-gpu
+  limitations: 排序表示忽略绝对表达与部分技术过程；任务解释性需独立验证。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: model-gears
+  title_zh: GEARS
+  title_en: Graph-Enhanced Gene Activation and Repression Simulator
+  year: 2023
+  category: 图扰动模型
+  summary_zh: 结合基因知识图和共表达图预测单基因与多基因干预后的转录响应。
+  tasks:
+  - single perturbation prediction
+  - combinatorial perturbation
+  modalities:
+  - scRNA-seq
+  perturbation_types:
+  - genetic-knockout
+  species:
+  - human
+  context: 细胞系CRISPR扰动
+  links:
+    paper: https://doi.org/10.1038/s41587-023-01905-6
+    code: https://github.com/snap-stanford/GEARS
+    weights: null
+    data: https://dataverse.harvard.edu/dataverse/gears
+    project: https://github.com/snap-stanford/GEARS
+  publication_status: peer-reviewed
+  reproducibility: code-and-data
+  recommendation: core
+  evidence_stage: in-silico
+  license: MIT
+  compute: GPU推荐
+  compute_tier: single-gpu
+  limitations: 跨细胞类型能力有限；组合预测需要组合训练信号。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: model-scgpt
+  title_zh: scGPT
+  title_en: scGPT
+  year: 2024
+  category: 单细胞基础模型
+  summary_zh: 面向单细胞多任务和多组学数据的生成式Transformer，提供预训练权重与下游任务代码。
+  tasks:
+  - cell annotation
+  - integration
+  - gene network
+  - perturbation prediction
+  modalities:
+  - scRNA-seq
+  - multiome
+  perturbation_types:
+  - none
+  species:
+  - human
+  context: 人类单细胞与多组学数据
+  links:
+    paper: https://doi.org/10.1038/s41592-024-02201-0
+    code: https://github.com/bowang-lab/scGPT
+    weights: https://huggingface.co/bowanglab/scGPT
+    data: null
+    project: https://scgpt.readthedocs.io/
+  publication_status: peer-reviewed
+  reproducibility: weights-and-code
+  recommendation: core
+  evidence_stage: in-silico
+  license: MIT；权重另见模型卡
+  compute: 单GPU下游任务；预训练需要多GPU
+  compute_tier: multi-gpu
+  limitations: 不同任务代码路径和预处理并不完全统一，复现需固定版本。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: model-scfoundation
+  title_zh: scFoundation
+  title_en: scFoundation
+  year: 2024
+  category: 单细胞基础模型
+  summary_zh: 覆盖约两万基因的预训练模型，强调大规模人类单细胞转录组表示与多类下游任务。
+  tasks:
+  - cell representation
+  - cell annotation
+  - perturbation prediction
+  modalities:
+  - scRNA-seq
+  perturbation_types:
+  - none
+  species:
+  - human
+  context: 超过五千万细胞的人类转录组
+  links:
+    paper: https://doi.org/10.1038/s41592-024-02305-7
+    code: https://github.com/biomap-research/scFoundation
+    weights: https://github.com/biomap-research/scFoundation
+    data: null
+    project: https://github.com/biomap-research/scFoundation
+  publication_status: peer-reviewed
+  reproducibility: weights-and-code
+  recommendation: recommended
+  evidence_stage: in-silico
+  license: 见官方仓库
+  compute: GPU推荐；模型与输入维度带来较高显存需求
+  compute_tier: single-gpu
+  limitations: 复杂度高，需与PCA、scVI和任务专用模型公平比较。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: model-genecompass
+  title_zh: GeneCompass
+  title_en: GeneCompass
+  year: 2024
+  category: 知识与跨物种基础模型
+  summary_zh: 将基因调控、家族与共表达先验引入跨物种预训练，面向基因机制和细胞任务。
+  tasks:
+  - gene representation
+  - cell annotation
+  - gene regulatory inference
+  modalities:
+  - scRNA-seq
+  perturbation_types:
+  - none
+  species:
+  - human
+  - mouse
+  context: 人和小鼠大规模单细胞图谱
+  links:
+    paper: https://doi.org/10.1093/nsr/nwae114
+    code: https://github.com/xCompass-AI/GeneCompass
+    weights: https://github.com/xCompass-AI/GeneCompass
+    data: null
+    project: https://github.com/xCompass-AI/GeneCompass
+  publication_status: peer-reviewed
+  reproducibility: weights-and-code
+  recommendation: recommended
+  evidence_stage: in-silico
+  license: 见官方仓库
+  compute: GPU推荐
+  compute_tier: single-gpu
+  limitations: 先验知识可能带来物种和注释偏差；机制解释仍需实验验证。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: model-cellplm
+  title_zh: CellPLM
+  title_en: CellPLM
+  year: 2024
+  category: 细胞与空间基础模型
+  summary_zh: 使用细胞邻域和关系信息进行预训练，支持单细胞与空间转录组下游任务。
+  tasks:
+  - cell representation
+  - spatial analysis
+  - cell annotation
+  modalities:
+  - scRNA-seq
+  - spatial-transcriptomics
+  perturbation_types:
+  - none
+  species:
+  - human
+  - mouse
+  context: 单细胞与空间数据
+  links:
+    paper: https://doi.org/10.1101/2023.10.03.560734
+    code: https://github.com/OmicsML/CellPLM
+    weights: https://github.com/OmicsML/CellPLM
+    data: null
+    project: https://github.com/OmicsML/CellPLM
+  publication_status: preprint
+  reproducibility: weights-and-code
+  recommendation: reference
+  evidence_stage: in-silico
+  license: 见官方仓库
+  compute: GPU推荐
+  compute_tier: single-gpu
+  limitations: 预印本状态；跨平台和空间邻域定义影响迁移结果。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: model-uce
+  title_zh: UCE
+  title_en: Universal Cell Embeddings
+  year: 2026
+  category: 跨物种基础模型
+  summary_zh: 用蛋白序列表示提供统一基因空间，生成可跨物种使用的细胞嵌入。
+  tasks:
+  - cell embedding
+  - cross-species integration
+  - cell annotation
+  modalities:
+  - scRNA-seq
+  - protein
+  perturbation_types:
+  - none
+  species:
+  - multi-species
+  context: 多物种单细胞数据
+  links:
+    paper: https://doi.org/10.1038/s41586-026-10689-z
+    code: https://github.com/snap-stanford/UCE
+    weights: https://figshare.com/articles/dataset/Universal_Cell_Embeddings_Model_Files/24320806
+    data: null
+    project: https://github.com/snap-stanford/UCE
+  publication_status: peer-reviewed
+  reproducibility: weights-and-code
+  recommendation: recommended
+  evidence_stage: in-silico
+  license: 见官方仓库与Figshare
+  compute: GPU和较大内存推荐
+  compute_tier: single-gpu
+  limitations: 主要提供表征；不直接预测干预后的细胞状态。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: model-aido-cell
+  title_zh: AIDO.Cell
+  title_en: AIDO.Cell
+  year: 2024
+  category: 单细胞基础模型
+  summary_zh: 采用全转录组连续值离散化与双向Transformer，在大规模人类细胞上预训练。
+  tasks:
+  - cell clustering
+  - cell classification
+  - perturbation modeling
+  modalities:
+  - scRNA-seq
+  perturbation_types:
+  - none
+  species:
+  - human
+  context: CELLxGENE Census等大规模人类细胞
+  links:
+    paper: https://doi.org/10.1101/2024.11.28.625303
+    code: https://github.com/genbio-ai/AIDO
+    weights: https://huggingface.co/genbio-ai/AIDO.Cell-100M
+    data: https://cellxgene.cziscience.com/census
+    project: https://virtualcellmodels.cziscience.com/model/aido-cell
+  publication_status: preprint
+  reproducibility: weights-and-code
+  recommendation: recommended
+  evidence_stage: in-silico
+  license: GenBio AI Community License
+  compute: 单GPU推理；预训练需要多GPU
+  compute_tier: multi-gpu
+  limitations: 社区许可证并非标准开源许可证；论文仍为预印本。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: model-scprint
+  title_zh: scPRINT
+  title_en: scPRINT
+  year: 2025
+  category: 基因网络基础模型
+  summary_zh: 在数千万细胞上预训练，重点支持基因网络推断、标签和表达相关任务。
+  tasks:
+  - gene network inference
+  - cell labeling
+  - imputation
+  modalities:
+  - scRNA-seq
+  perturbation_types:
+  - none
+  species:
+  - human
+  context: 多组织人类单细胞数据
+  links:
+    paper: https://doi.org/10.1038/s41467-025-58699-1
+    code: https://github.com/cantinilab/scPRINT
+    weights: https://huggingface.co/jkobject/scPRINT
+    data: null
+    project: https://github.com/cantinilab/scPRINT
+  publication_status: peer-reviewed
+  reproducibility: weights-and-code
+  recommendation: recommended
+  evidence_stage: in-silico
+  license: 见官方仓库与模型卡
+  compute: GPU推荐
+  compute_tier: single-gpu
+  limitations: 网络推断结果不是直接因果证据；依赖预训练图谱覆盖。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: model-scimilarity
+  title_zh: SCimilarity
+  title_en: SCimilarity
+  year: 2025
+  category: 图谱检索模型
+  summary_zh: 通过度量学习建立可扩展细胞相似度，用于跨研究检索、注释和置信度判断。
+  tasks:
+  - cell retrieval
+  - cell annotation
+  - atlas mapping
+  modalities:
+  - scRNA-seq
+  perturbation_types:
+  - none
+  species:
+  - human
+  context: 23.4M细胞的人体图谱
+  links:
+    paper: https://doi.org/10.1038/s41586-024-08411-y
+    code: https://github.com/Genentech/scimilarity
+    weights: https://zenodo.org/records/10685499
+    data: null
+    project: https://github.com/Genentech/scimilarity
+  publication_status: peer-reviewed
+  reproducibility: weights-and-code
+  recommendation: recommended
+  evidence_stage: in-silico
+  license: Apache-2.0；权重和图谱另见发布页
+  compute: CPU检索可行；图谱构建需要大内存
+  compute_tier: cpu
+  limitations: 用于状态检索而非状态转换；低训练覆盖会降低表示置信度。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: model-state
+  title_zh: STATE
+  title_en: State Embedding and State Transition
+  year: 2025
+  category: AIVC状态转换
+  summary_zh: Arc的第一代虚拟细胞模型，将状态表征和扰动状态转换模块分开，覆盖遗传、化学和细胞因子响应。
+  tasks:
+  - state embedding
+  - perturbation prediction
+  - cross-context transfer
+  modalities:
+  - scRNA-seq
+  perturbation_types:
+  - chemical
+  species:
+  - human
+  context: 多细胞背景的大规模观测与扰动数据
+  links:
+    paper: https://arcinstitute.org/tools/state
+    code: https://github.com/ArcInstitute/state
+    weights: https://arcinstitute.org/tools/state
+    data: https://github.com/ArcInstitute/arc-virtual-cell-atlas
+    project: https://arcinstitute.org/virtual-cell-initiative
+  publication_status: technical-report
+  reproducibility: weights-and-code
+  recommendation: core
+  evidence_stage: concept
+  license: Arc Research/Public/Commercial model licenses；代码另见仓库
+  compute: 预训练模型推理与训练通常需要GPU
+  compute_tier: single-gpu
+  limitations: 模型与权重使用受特定许可证约束；当前主要预测转录组响应。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: model-tahoe-x1
+  title_zh: Tahoe-x1
+  title_en: Tahoe-x1
+  year: 2025
+  category: 扰动基础模型
+  summary_zh: 面向十亿级扰动数据训练的单细胞基础模型，强调在Tahoe-100M上的规模化训练。
+  tasks:
+  - cell representation
+  - perturbation prediction
+  modalities:
+  - scRNA-seq
+  perturbation_types:
+  - chemical
+  species:
+  - human
+  context: Tahoe-100M癌细胞系药物扰动
+  links:
+    paper: https://doi.org/10.1101/2025.10.23.683759
+    code: https://github.com/tahoebio/tahoe-x1
+    weights: https://huggingface.co/tahoebio
+    data: https://huggingface.co/datasets/tahoebio/Tahoe-100M
+    project: https://github.com/tahoebio/tahoe-x1
+  publication_status: preprint
+  reproducibility: weights-and-code
+  recommendation: reference
+  evidence_stage: in-silico
+  license: 见官方仓库、模型卡和数据卡
+  compute: 多GPU训练；推理需求按模型规模变化
+  compute_tier: multi-gpu
+  limitations: 预印本；以癌细胞系化学扰动训练，跨原代组织结论需验证。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: model-totalvi
+  title_zh: totalVI
+  title_en: total Variational Inference
+  year: 2021
+  category: RNA-蛋白联合模型
+  summary_zh: 面向 CITE-seq 的生成模型，联合估计 RNA、蛋白背景、批次和潜在细胞状态。
+  tasks:
+  - multimodal integration
+  - denoising
+  - differential expression
+  modalities:
+  - scRNA-seq
+  - protein
+  perturbation_types:
+  - none
+  species:
+  - human
+  - mouse
+  context: CITE-seq 配对多组学
+  links:
+    paper: https://doi.org/10.1038/s41592-020-01050-x
+    code: https://github.com/scverse/scvi-tools
+    weights: null
+    data: null
+    project: https://docs.scvi-tools.org/en/stable/user_guide/models/totalvi.html
+  publication_status: peer-reviewed
+  reproducibility: code-and-data
+  recommendation: recommended
+  evidence_stage: in-silico
+  license: BSD-3-Clause
+  compute: 单 GPU 推荐
+  compute_tier: single-gpu
+  limitations: 依赖明确的批次和蛋白背景建模，潜变量不等于机制状态。
+  last_verified: '2026-07-28'
+  verification_status: verified
+- id: model-multivi
+  title_zh: MultiVI
+  title_en: MultiVI
+  year: 2023
+  category: RNA-ATAC联合模型
+  summary_zh: 联合分析单模态、配对和马赛克式 RNA、ATAC、蛋白数据。
+  tasks:
+  - multimodal integration
+  - imputation
+  modalities:
+  - scRNA-seq
+  - scATAC-seq
+  - protein
+  - multiome
+  perturbation_types:
+  - none
+  species:
+  - human
+  context: 单细胞多组学
+  links:
+    paper: https://doi.org/10.1038/s41592-023-01909-9
+    code: https://github.com/scverse/scvi-tools
+    weights: null
+    data: null
+    project: https://docs.scvi-tools.org/en/stable/user_guide/models/multivi.html
+  publication_status: peer-reviewed
+  reproducibility: code-and-data
+  recommendation: recommended
+  evidence_stage: in-silico
+  license: BSD-3-Clause
+  compute: 单 GPU 推荐
+  compute_tier: single-gpu
+  limitations: 未测模态的预测必须与真实配对数据分开评测。
+  last_verified: '2026-07-28'
+  verification_status: verified
+- id: model-scglue
+  title_zh: scGLUE
+  title_en: Graph-Linked Unified Embedding
+  year: 2022
+  category: 图多组学
+  summary_zh: 以调控图连接非配对组学的潜空间，兼顾整合和调控关系推断。
+  tasks:
+  - multimodal integration
+  - regulatory inference
+  modalities:
+  - scRNA-seq
+  - scATAC-seq
+  - multiome
+  perturbation_types:
+  - none
+  species:
+  - human
+  - mouse
+  context: 非配对 RNA 与染色质数据
+  links:
+    paper: https://doi.org/10.1038/s41587-022-01284-4
+    code: https://github.com/gao-lab/GLUE
+    weights: null
+    data: null
+    project: https://scglue.readthedocs.io/
+  publication_status: peer-reviewed
+  reproducibility: code-and-data
+  recommendation: recommended
+  evidence_stage: in-silico
+  license: MIT
+  compute: 单 GPU 推荐
+  compute_tier: single-gpu
+  limitations: 整合质量对先验图、特征过滤和对抗训练敏感。
+  last_verified: '2026-07-28'
+  verification_status: verified
+- id: model-tangram
+  title_zh: Tangram
+  title_en: Tangram
+  year: 2021
+  category: 空间映射
+  summary_zh: 学习单细胞参考与空间表达之间的概率匹配。
+  tasks:
+  - spatial mapping
+  - deconvolution
+  modalities:
+  - scRNA-seq
+  - spatial-transcriptomics
+  perturbation_types:
+  - none
+  species:
+  - human
+  - mouse
+  context: 单细胞参考和空间组织切片
+  links:
+    paper: https://doi.org/10.1038/s41592-021-01264-7
+    code: https://github.com/broadinstitute/Tangram
+    weights: null
+    data: null
+    project: https://tangram-sc.readthedocs.io/
+  publication_status: peer-reviewed
+  reproducibility: code-and-data
+  recommendation: recommended
+  evidence_stage: retrospective
+  license: BSD-3-Clause
+  compute: 单 GPU 推荐
+  compute_tier: single-gpu
+  limitations: 空间映射受参考覆盖和共享基因限制。
+  last_verified: '2026-07-28'
+  verification_status: verified
+- id: model-cellot
+  title_zh: CellOT
+  title_en: CellOT
+  year: 2023
+  category: 分布扰动模型
+  summary_zh: 用输入凸神经网络参数化最优传输，预测扰动后的单细胞分布。
+  tasks:
+  - perturbation prediction
+  - distribution modeling
+  modalities:
+  - scRNA-seq
+  - imaging
+  perturbation_types:
+  - chemical
+  species:
+  - human
+  - mouse
+  context: 药物与细胞因子扰动
+  links:
+    paper: https://doi.org/10.1038/s41592-023-01969-x
+    code: https://github.com/bunnech/cellot
+    weights: null
+    data: null
+    project: https://github.com/bunnech/cellot
+  publication_status: peer-reviewed
+  reproducibility: code-and-data
+  recommendation: recommended
+  evidence_stage: retrospective
+  license: MIT
+  compute: 单 GPU 推荐
+  compute_tier: single-gpu
+  limitations: 逐扰动学习限制了对全新扰动的组合泛化。
+  last_verified: '2026-07-28'
+  verification_status: verified
+- id: model-destvi
+  title_zh: DestVI
+  title_en: Deconvolution of Spatial Transcriptomics Profiles Using Variational Inference
+  year: 2022
+  category: 空间反卷积
+  summary_zh: 联合单细胞参考和空间观测，估计空间位置的细胞类型比例与连续状态。
+  tasks:
+  - spatial deconvolution
+  - continuous state inference
+  modalities:
+  - scRNA-seq
+  - spatial-transcriptomics
+  perturbation_types:
+  - none
+  species:
+  - human
+  - mouse
+  context: Visium 等点位级空间转录组
+  links:
+    paper: https://doi.org/10.1038/s41587-022-01272-8
+    code: https://github.com/scverse/scvi-tools
+    weights: null
+    data: null
+    project: https://docs.scvi-tools.org/en/stable/user_guide/models/destvi.html
+  publication_status: peer-reviewed
+  reproducibility: code-and-data
+  recommendation: recommended
+  evidence_stage: retrospective
+  license: BSD-3-Clause
+  compute: 单 GPU 推荐
+  compute_tier: single-gpu
+  limitations: 依赖匹配的单细胞参考，稀有或缺失细胞类型难以可靠恢复。
+  last_verified: '2026-07-28'
+  verification_status: verified
+- id: model-cellpose
+  title_zh: Cellpose
+  title_en: Cellpose
+  year: 2021
+  category: 通用细胞分割
+  summary_zh: 使用流场表示进行二维和三维细胞分割，并提供预训练模型和交互工具。
+  tasks:
+  - cell segmentation
+  - image analysis
+  modalities:
+  - imaging
+  perturbation_types:
+  - none
+  species:
+  - multi-species
+  context: 荧光与明场显微图像
+  links:
+    paper: https://doi.org/10.1038/s41592-020-01018-x
+    code: https://github.com/MouseLand/cellpose
+    weights: https://www.cellpose.org/
+    data: https://www.cellpose.org/dataset
+    project: https://www.cellpose.org/
+  publication_status: peer-reviewed
+  reproducibility: weights-and-code
+  recommendation: recommended
+  evidence_stage: retrospective
+  license: BSD-3-Clause
+  compute: CPU 可运行，GPU 显著加速
+  compute_tier: single-gpu
+  limitations: 跨成像协议需抽样人工检查，分割误差会传播到所有下游特征。
+  last_verified: '2026-07-28'
+  verification_status: verified
+- id: model-stardist
+  title_zh: StarDist
+  title_en: StarDist
+  year: 2018
+  category: 实例分割
+  summary_zh: 用星形凸多边形或多面体表示细胞核，适合拥挤荧光图像实例分割。
+  tasks:
+  - nucleus segmentation
+  - instance segmentation
+  modalities:
+  - imaging
+  perturbation_types:
+  - none
+  species:
+  - multi-species
+  context: 二维和三维显微图像
+  links:
+    paper: https://doi.org/10.1007/978-3-030-00934-2_30
+    code: https://github.com/stardist/stardist
+    weights: https://bioimage.io/
+    data: null
+    project: https://stardist.net/
+  publication_status: peer-reviewed
+  reproducibility: weights-and-code
+  recommendation: recommended
+  evidence_stage: retrospective
+  license: BSD-3-Clause
+  compute: CPU 可推理，训练推荐单 GPU
+  compute_tier: single-gpu
+  limitations: 星形凸假设不适合所有细胞形状，模型迁移需匹配像素尺度。
+  last_verified: '2026-07-28'
+  verification_status: verified

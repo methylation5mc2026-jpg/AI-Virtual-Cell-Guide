@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 600" role="img" aria-labelledby="title desc">
+  <title id="title">实验单位、伪重复与数据泄漏示意图</title>
+  <desc id="desc">左侧展示错误的细胞随机拆分，右侧展示按扰动和生物重复拆分</desc>
+  <defs><style>.h{font:700 24px Arial,sans-serif;fill:#133333}.b{font:17px Arial,sans-serif;fill:#42615d}.cell{stroke-width:3}.bad{fill:#fff1ef;stroke:#d64c3b}.good{fill:#eef8f6;stroke:#087f6d}.split{fill:none;stroke:#6d4aff;stroke-width:3;stroke-dasharray:9 7}</style></defs>
+  <rect width="1120" height="600" rx="28" fill="#fbfdfd"/>
+  <text x="560" y="50" text-anchor="middle" class="h">细胞不是独立实验重复：拆分单位必须跟科学主张一致</text>
+  <rect x="45" y="85" width="500" height="450" rx="24" class="bad"/>
+  <text x="295" y="125" text-anchor="middle" class="h">错误：随机拆细胞</text>
+  <text x="295" y="158" text-anchor="middle" class="b">同一孔、批次、扰动的细胞同时进入训练与测试</text>
+  <path d="M75 315h440" class="split"/>
+  <text x="90" y="205" class="b">TRAIN</text><text x="90" y="355" class="b">TEST</text>
+  <g class="cell bad">
+    <circle cx="175" cy="220" r="25"/><circle cx="255" cy="250" r="25"/><circle cx="350" cy="210" r="25"/><circle cx="440" cy="265" r="25"/>
+    <circle cx="155" cy="395" r="25"/><circle cx="250" cy="430" r="25"/><circle cx="350" cy="385" r="25"/><circle cx="445" cy="440" r="25"/>
+  </g>
+  <text x="295" y="505" text-anchor="middle" class="b">模型可记住批次和孔，而不是学习可迁移响应</text>
+  <rect x="575" y="85" width="500" height="450" rx="24" class="good"/>
+  <text x="825" y="125" text-anchor="middle" class="h">正确：按扰动＋重复拆分</text>
+  <text x="825" y="158" text-anchor="middle" class="b">未见扰动隔离；控制重复按批次分配且细胞 ID 不复用</text>
+  <rect x="615" y="190" width="190" height="270" rx="18" fill="#fff" stroke="#087f6d" stroke-width="3"/>
+  <rect x="845" y="190" width="190" height="270" rx="18" fill="#fff" stroke="#6d4aff" stroke-width="3"/>
+  <text x="710" y="225" text-anchor="middle" class="h">TRAIN</text><text x="940" y="225" text-anchor="middle" class="h">TEST</text>
+  <text x="710" y="265" text-anchor="middle" class="b">ctrl / batch A</text><text x="710" y="295" text-anchor="middle" class="b">GENE_A · GENE_B</text>
+  <text x="940" y="265" text-anchor="middle" class="b">ctrl / batch C</text><text x="940" y="295" text-anchor="middle" class="b">GENE_D</text>
+  <text x="710" y="350" text-anchor="middle" class="b">replicate 1–2</text><text x="940" y="350" text-anchor="middle" class="b">replicate 3</text>
+  <text x="825" y="505" text-anchor="middle" class="b">测试问题：对新扰动、独立重复和新批次是否仍然成立？</text>
+</svg>

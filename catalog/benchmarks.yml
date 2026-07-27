@@ -1,0 +1,471 @@
+catalog_version: 2
+kind: benchmarks
+entries:
+- id: benchmark-vcc-2025
+  title_zh: Arc Virtual Cell Challenge 2025
+  title_en: Virtual Cell Challenge 2025
+  year: 2025
+  category: 未见扰动预测
+  summary_zh: 以H1人胚胎干细胞CRISPRi数据评测未见基因扰动响应，采用DES、PDS和MAE。
+  tasks:
+  - held-out perturbation prediction
+  - model comparison
+  modalities:
+  - scRNA-seq
+  perturbation_types:
+  - genetic-knockdown
+  species:
+  - human
+  context: H1人胚胎干细胞、300个目标基因
+  links:
+    paper: https://doi.org/10.1016/j.cell.2025.05.045
+    code: https://github.com/ArcInstitute/arc-virtual-cell-atlas
+    weights: null
+    data: https://github.com/ArcInstitute/arc-virtual-cell-atlas/tree/main/virtual-cell-challenge
+    project: https://virtualcellchallenge.org/
+  publication_status: peer-reviewed
+  reproducibility: code-and-data
+  recommendation: core
+  evidence_stage: in-silico
+  license: Arc挑战与数据条款
+  compute: 完整数据分析需要较大内存；提交模型通常需要GPU
+  compute_tier: single-gpu
+  limitations: 单细胞背景；排行榜指标会影响建模策略，不能代表全部生物学用途。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: benchmark-cell-eval
+  title_zh: cell-eval
+  title_en: Arc cell-eval
+  year: 2025
+  category: 扰动预测评测库
+  summary_zh: Arc为STATE与细胞状态转换任务维护的统一评测实现，包含多种表达和扰动指标。
+  tasks:
+  - perturbation evaluation
+  - metric implementation
+  modalities:
+  - scRNA-seq
+  perturbation_types:
+  - none
+  species:
+  - human
+  context: STATE与Virtual Cell Challenge相关任务
+  links:
+    paper: https://arcinstitute.org/tools/state
+    code: https://github.com/ArcInstitute/cell-eval
+    weights: null
+    data: null
+    project: https://github.com/ArcInstitute/cell-eval
+  publication_status: technical-report
+  reproducibility: code-only
+  recommendation: core
+  evidence_stage: concept
+  license: 见官方仓库
+  compute: CPU可运行多数指标；大数据需要批处理
+  compute_tier: cpu
+  limitations: 指标实现与模型/数据协议仍在演进，必须固定版本。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: benchmark-perturbench
+  title_zh: PerturBench
+  title_en: PerturBench
+  year: 2025
+  category: 单细胞扰动模型基准
+  summary_zh: 为单细胞扰动模型提供标准数据模块、预测接口、模型和评测流程，强调分布级比较。
+  tasks:
+  - perturbation prediction
+  - distribution evaluation
+  - model comparison
+  modalities:
+  - scRNA-seq
+  perturbation_types:
+  - chemical
+  species:
+  - human
+  - mouse
+  context: scPerturb及其他公开扰动数据
+  links:
+    paper: https://arxiv.org/abs/2408.10609
+    code: https://github.com/altoslabs/perturbench
+    weights: null
+    data: https://www.sanderlab.org/scPerturb/
+    project: https://openreview.net/forum?id=PPPDuyiZaG
+  publication_status: preprint
+  reproducibility: code-only
+  recommendation: recommended
+  evidence_stage: in-silico
+  license: Apache-2.0
+  compute: CPU可做基线；生成模型训练建议GPU
+  compute_tier: single-gpu
+  limitations: 预印本与活跃开发状态；不同数据集仍存在任务定义差异。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: benchmark-scib
+  title_zh: scIB整合基准
+  title_en: scIB
+  year: 2020
+  category: 单细胞数据整合
+  summary_zh: 用批次去除和生物结构保留等互补指标比较单细胞整合方法。
+  tasks:
+  - batch integration
+  - representation evaluation
+  modalities:
+  - scRNA-seq
+  perturbation_types:
+  - none
+  species:
+  - human
+  - mouse
+  context: 多数据集、批次和细胞类型整合
+  links:
+    paper: https://doi.org/10.1038/s41592-021-01336-8
+    code: https://github.com/theislab/scib
+    weights: null
+    data: null
+    project: https://scib.readthedocs.io/
+  publication_status: peer-reviewed
+  reproducibility: code-only
+  recommendation: recommended
+  evidence_stage: in-silico
+  license: MIT
+  compute: CPU；大数据图指标需要较大内存
+  compute_tier: cpu
+  limitations: 整合指标不评价扰动预测或机制；聚合总分可能掩盖指标权衡。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: benchmark-openproblems-multiome
+  title_zh: Open Problems多组学整合挑战
+  title_en: Open Problems Multimodal Single-Cell Integration
+  year: 2021
+  category: 多组学整合
+  summary_zh: 公开评测RNA、ATAC和蛋白等模态的匹配、预测与联合嵌入任务。
+  tasks:
+  - modality prediction
+  - modality matching
+  - joint embedding
+  modalities:
+  - scRNA-seq
+  - scATAC-seq
+  - protein
+  perturbation_types:
+  - none
+  species:
+  - human
+  context: PBMC和骨髓多组学数据
+  links:
+    paper: https://doi.org/10.1038/s41587-023-01933-2
+    code: https://github.com/openproblems-bio/openproblems
+    weights: null
+    data: https://openproblems.bio/competitions/neurips_2021/
+    project: https://openproblems.bio/events/2021-09_neurips
+  publication_status: peer-reviewed
+  reproducibility: code-and-data
+  recommendation: recommended
+  evidence_stage: in-silico
+  license: 数据与竞赛条款；代码见仓库
+  compute: 任务方案从CPU到多GPU不等
+  compute_tier: multi-gpu
+  limitations: 竞赛数据和指标不能覆盖所有组织、平台与缺失模态情况。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: benchmark-openproblems-perturbation
+  title_zh: Open Problems单细胞扰动预测挑战
+  title_en: Open Problems Single-Cell Perturbations
+  year: 2023
+  category: 药物扰动预测
+  summary_zh: 以外周血单核细胞药物处理数据评测跨细胞类型表达响应预测。
+  tasks:
+  - drug response
+  - cross-cell-type prediction
+  modalities:
+  - scRNA-seq
+  perturbation_types:
+  - chemical
+  species:
+  - human
+  context: PBMC细胞类型与小分子处理
+  links:
+    paper: null
+    code: https://github.com/openproblems-bio/openproblems
+    weights: null
+    data: https://www.kaggle.com/competitions/open-problems-single-cell-perturbations
+    project: https://openproblems.bio/
+  publication_status: product
+  reproducibility: code-and-data
+  recommendation: recommended
+  evidence_stage: in-silico
+  license: Kaggle竞赛与数据条款
+  compute: CPU可做pseudobulk基线；高排名方案常用GPU
+  compute_tier: single-gpu
+  limitations: 主要评价pseudobulk差异表达，单一数据设计限制广泛外推。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: benchmark-foundation-model-perturbation-600
+  title_zh: 600模型扰动响应基准
+  title_en: Foundation Models Improve Perturbation Response Prediction
+  year: 2026
+  category: 基础模型与扰动预测
+  summary_zh: 比较数百种基础模型表示、生成模型与简单基线，覆盖遗传和化学扰动及跨背景设置。
+  tasks:
+  - foundation model benchmarking
+  - perturbation prediction
+  modalities:
+  - scRNA-seq
+  - protein
+  perturbation_types:
+  - chemical
+  species:
+  - human
+  context: 多个遗传与化学扰动数据集
+  links:
+    paper: https://www.biorxiv.org/content/10.64898/2026.02.18.706454v1
+    code: https://github.com/genbio-ai/foundation-models-perturbation
+    weights: null
+    data: https://huggingface.co/genbio-ai
+    project: https://github.com/genbio-ai/foundation-models-perturbation
+  publication_status: preprint
+  reproducibility: code-and-data
+  recommendation: reference
+  evidence_stage: in-silico
+  license: GenBio AI Community License
+  compute: 完整复现需要多GPU和大量预计算embedding
+  compute_tier: multi-gpu
+  limitations: 预印本；模型与数据选择、任务公式和社区许可证需要独立审查。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: benchmark-scperturb-estatistics
+  title_zh: scPerturb效应量与E-distance
+  title_en: scPerturb E-statistics Benchmarking Resources
+  year: 2024
+  category: 扰动效应评测
+  summary_zh: 在统一扰动数据上提供分布距离和效应显著性资源，可补充均值与Top-DE指标。
+  tasks:
+  - perturbation effect quantification
+  - distribution comparison
+  modalities:
+  - scRNA-seq
+  perturbation_types:
+  - none
+  species:
+  - human
+  - mouse
+  context: 多个遗传、药物和环境扰动数据
+  links:
+    paper: https://doi.org/10.1038/s41592-023-02144-y
+    code: https://github.com/theislab/sc-pert
+    weights: null
+    data: https://zenodo.org/doi/10.5281/zenodo.7041848
+    project: https://www.sanderlab.org/scPerturb/
+  publication_status: peer-reviewed
+  reproducibility: code-and-data
+  recommendation: recommended
+  evidence_stage: in-silico
+  license: 各原始数据许可证不同
+  compute: CPU可运行；全量数据需批处理
+  compute_tier: cpu
+  limitations: 分布距离受样本量、批次和预处理影响，不能单独证明机制。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: benchmark-cell-tracking-challenge
+  title_zh: 细胞追踪挑战
+  title_en: Cell Tracking Challenge
+  year: 2017
+  category: 时序成像
+  summary_zh: 以多种显微时间序列和专家真值评测细胞分割、追踪与谱系恢复。
+  tasks:
+  - cell segmentation
+  - cell tracking
+  - lineage reconstruction
+  modalities:
+  - imaging
+  - lineage
+  perturbation_types:
+  - none
+  species:
+  - multi-species
+  context: 二维和三维活细胞显微序列
+  links:
+    paper: https://doi.org/10.1038/nmeth.4473
+    code: null
+    weights: null
+    data: https://celltrackingchallenge.net/datasets/
+    project: https://celltrackingchallenge.net/
+  publication_status: peer-reviewed
+  reproducibility: data-only
+  recommendation: recommended
+  evidence_stage: in-silico
+  license: Challenge dataset terms
+  compute: 从 CPU 到单 GPU，取决于方法
+  compute_tier: single-gpu
+  limitations: 排行榜指标依赖特定真值和对象定义，跨成像平台需单独报告。
+  last_verified: '2026-07-28'
+  verification_status: verified
+- id: benchmark-bbbc
+  title_zh: BBBC 生物图像基准
+  title_en: Broad Bioimage Benchmark Collection
+  year: 2012
+  category: 图像分析
+  summary_zh: 提供覆盖分割、分类和形态画像任务的标准显微图像及真值。
+  tasks:
+  - segmentation
+  - classification
+  - morphological profiling
+  modalities:
+  - imaging
+  perturbation_types:
+  - chemical
+  - none
+  species:
+  - multi-species
+  context: 多种成像平台和生物样本
+  links:
+    paper: https://doi.org/10.1038/nmeth.2083
+    code: null
+    weights: null
+    data: https://bbbc.broadinstitute.org/image_sets
+    project: https://bbbc.broadinstitute.org/
+  publication_status: peer-reviewed
+  reproducibility: data-only
+  recommendation: recommended
+  evidence_stage: in-silico
+  license: Dataset-specific licenses
+  compute: 按图像集从 CPU 到 GPU
+  compute_tier: single-gpu
+  limitations: 图像集之间任务与真值不同，不应汇总成单一总分。
+  last_verified: '2026-07-28'
+  verification_status: verified
+- id: benchmark-jump-cell-painting
+  title_zh: JUMP Cell Painting 表型检索
+  title_en: JUMP Cell Painting Benchmark
+  year: 2024
+  category: 形态表征
+  summary_zh: 在跨批次遗传与化学扰动上评测形态特征的可重复性和生物关联检索。
+  tasks:
+  - phenotypic retrieval
+  - batch generalization
+  modalities:
+  - imaging
+  perturbation_types:
+  - genetic-knockout
+  - chemical
+  species:
+  - human
+  context: 多中心 Cell Painting 数据
+  links:
+    paper: https://doi.org/10.1038/s41592-024-02528-8
+    code: https://github.com/jump-cellpainting/2024_Chandrasekaran_NatureMethods
+    weights: null
+    data: https://registry.opendata.aws/cellpainting-gallery/
+    project: https://jump-cellpainting.broadinstitute.org/
+  publication_status: peer-reviewed
+  reproducibility: code-and-data
+  recommendation: recommended
+  evidence_stage: in-silico
+  license: CC0 and accession-specific terms
+  compute: 特征表可用 CPU，图像模型需要 GPU
+  compute_tier: single-gpu
+  limitations: 批次校正可能同时移除真实信号，必须同时报告重复性与生物检索。
+  last_verified: '2026-07-28'
+  verification_status: verified
+- id: benchmark-rxrx3-core
+  title_zh: RxRx3-core 药物—靶点基准
+  title_en: RxRx3-core
+  year: 2025
+  category: 零样本形态检索
+  summary_zh: 从 RxRx3 提取较小的形态学子集，评测零样本药物—靶点相互作用预测。
+  tasks:
+  - zero-shot retrieval
+  - drug-target interaction
+  modalities:
+  - imaging
+  perturbation_types:
+  - genetic-knockout
+  - chemical
+  species:
+  - human
+  context: 高内涵成像中的遗传与药物扰动
+  links:
+    paper: https://arxiv.org/abs/2503.20158
+    code: null
+    weights: null
+    data: https://www.rxrx.ai/rxrx3
+    project: https://www.rxrx.ai/rxrx3
+  publication_status: preprint
+  reproducibility: data-only
+  recommendation: reference
+  evidence_stage: in-silico
+  license: Recursion Non-Commercial EULA
+  compute: 约 18 GB，单 GPU 推荐
+  compute_tier: single-gpu
+  limitations: 仍继承 RxRx3 的许可、实验背景和隐藏混杂限制。
+  last_verified: '2026-07-28'
+  verification_status: verified
+- id: benchmark-cytospace
+  title_zh: 单细胞到空间位置映射基准
+  title_en: CytoSPACE Spatial Mapping Benchmark
+  year: 2023
+  category: 空间映射
+  summary_zh: 比较专用空间映射、单细胞整合和朴素距离方法的细胞到位置对齐。
+  tasks:
+  - spatial mapping
+  - method comparison
+  modalities:
+  - scRNA-seq
+  - spatial-transcriptomics
+  perturbation_types:
+  - none
+  species:
+  - human
+  - mouse
+  context: 单细胞参考与多平台空间转录组
+  links:
+    paper: https://doi.org/10.1038/s41587-023-01697-9
+    code: https://github.com/digitalcytometry/cytospace
+    weights: null
+    data: null
+    project: https://github.com/digitalcytometry/cytospace
+  publication_status: peer-reviewed
+  reproducibility: code-and-data
+  recommendation: recommended
+  evidence_stage: in-silico
+  license: GPL-3.0
+  compute: CPU 可运行，大数据需高内存
+  compute_tier: cpu
+  limitations: 不同空间技术的真值精度不一致，评测结论不能直接外推到新组织。
+  last_verified: '2026-07-28'
+  verification_status: verified
+- id: benchmark-multimodal-integration-2025
+  title_zh: 单细胞多模态整合多任务基准
+  title_en: Multitask Benchmarking of Single-Cell Multimodal Omics Integration Methods
+  year: 2025
+  category: 多模态整合
+  summary_zh: 从多类下游任务评估多模态整合，避免仅依赖可视化或单一邻域指标。
+  tasks:
+  - multimodal integration
+  - benchmarking
+  modalities:
+  - scRNA-seq
+  - scATAC-seq
+  - protein
+  - multiome
+  perturbation_types:
+  - none
+  species:
+  - human
+  - mouse
+  context: 多技术、多组织的单细胞多组学
+  links:
+    paper: https://doi.org/10.1038/s41592-025-02856-3
+    code: null
+    weights: null
+    data: null
+    project: https://doi.org/10.1038/s41592-025-02856-3
+  publication_status: peer-reviewed
+  reproducibility: documentation-only
+  recommendation: recommended
+  evidence_stage: in-silico
+  license: Article and source-dataset terms apply
+  compute: 方法跨度从 CPU 到多 GPU
+  compute_tier: multi-gpu
+  limitations: 排名取决于任务权重、预处理和超参数预算，不能视为普遍优劣。
+  last_verified: '2026-07-28'
+  verification_status: verified

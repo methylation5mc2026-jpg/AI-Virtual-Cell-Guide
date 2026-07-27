@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 620" role="img" aria-labelledby="title desc">
+  <title id="title">从生物问题到实验反馈的数据模型评测闭环</title>
+  <desc id="desc">问题、实验、数据、模型、评测和决策六阶段循环，每阶段都有审计问题</desc>
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0v6l9-3z" fill="#087f6d"/></marker>
+    <style>.n{fill:#fff;stroke:#087f6d;stroke-width:3}.h{font:700 22px Arial,sans-serif;fill:#133333}.b{font:17px Arial,sans-serif;fill:#42615d}.p{stroke:#087f6d;stroke-width:5;fill:none;marker-end:url(#a)}</style>
+  </defs>
+  <rect width="1120" height="620" rx="28" fill="#f5fbfa"/>
+  <text x="560" y="50" text-anchor="middle" class="h">数据—模型—任务—评测不是流水线，而是可回退的实验循环</text>
+  <g transform="translate(60 100)">
+    <rect width="260" height="120" rx="20" class="n"/><text x="130" y="42" text-anchor="middle" class="h">1 生物问题</text><text x="130" y="78" text-anchor="middle" class="b">反事实是什么？</text><text x="130" y="103" text-anchor="middle" class="b">结论作用在哪个层级？</text>
+  </g>
+  <g transform="translate(430 100)">
+    <rect width="260" height="120" rx="20" class="n"/><text x="130" y="42" text-anchor="middle" class="h">2 实验设计</text><text x="130" y="78" text-anchor="middle" class="b">重复、批次、剂量与时间</text><text x="130" y="103" text-anchor="middle" class="b">控制组能否识别效应？</text>
+  </g>
+  <g transform="translate(800 100)">
+    <rect width="260" height="120" rx="20" class="n"/><text x="130" y="42" text-anchor="middle" class="h">3 数据契约</text><text x="130" y="78" text-anchor="middle" class="b">原始计数是否真实？</text><text x="130" y="103" text-anchor="middle" class="b">测量过程是否可追踪？</text>
+  </g>
+  <g transform="translate(800 380)">
+    <rect width="260" height="120" rx="20" class="n"/><text x="130" y="42" text-anchor="middle" class="h">4 模型与基线</text><text x="130" y="78" text-anchor="middle" class="b">模型增加了什么假设？</text><text x="130" y="103" text-anchor="middle" class="b">是否胜过朴素预测？</text>
+  </g>
+  <g transform="translate(430 380)">
+    <rect width="260" height="120" rx="20" class="n"/><text x="130" y="42" text-anchor="middle" class="h">5 评测与误差</text><text x="130" y="78" text-anchor="middle" class="b">拆分是否匹配主张？</text><text x="130" y="103" text-anchor="middle" class="b">失败集中在哪里？</text>
+  </g>
+  <g transform="translate(60 380)">
+    <rect width="260" height="120" rx="20" class="n"/><text x="130" y="42" text-anchor="middle" class="h">6 决策与验证</text><text x="130" y="78" text-anchor="middle" class="b">选择什么真实实验？</text><text x="130" y="103" text-anchor="middle" class="b">怎样更新下一轮设计？</text>
+  </g>
+  <path d="M320 160h100M690 160h100M930 220v150M800 440H700M430 440H330M190 380V230" class="p"/>
+</svg>

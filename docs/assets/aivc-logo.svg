@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 360" role="img" aria-labelledby="title desc">
+  <title id="title">AI Virtual Cell Guide 标志</title>
+  <desc id="desc">由细胞轮廓、分子节点和虚拟实验回路组成的抽象图形</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e9faf5"/>
+      <stop offset="1" stop-color="#eeeaff"/>
+    </linearGradient>
+    <linearGradient id="cell" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#087f6d"/>
+      <stop offset="1" stop-color="#6d4aff"/>
+    </linearGradient>
+  </defs>
+  <rect width="520" height="360" rx="36" fill="url(#bg)"/>
+  <path d="M126 191c-8-74 39-131 111-139 72-8 137 24 159 89 25 74-9 146-82 174-75 29-180-7-188-124Z"
+        fill="none" stroke="url(#cell)" stroke-width="15"/>
+  <circle cx="261" cy="182" r="55" fill="#fff" stroke="#6d4aff" stroke-width="8"/>
+  <circle cx="261" cy="182" r="13" fill="#6d4aff"/>
+  <g fill="#087f6d">
+    <circle cx="178" cy="119" r="12"/><circle cx="350" cy="131" r="12"/>
+    <circle cx="180" cy="247" r="12"/><circle cx="340" cy="257" r="12"/>
+  </g>
+  <g stroke="#087f6d" stroke-width="5" fill="none">
+    <path d="M188 125 221 151M339 138l-35 22M188 241l36-26M330 250l-30-27"/>
+  </g>
+  <path d="M421 116c42 35 50 91 22 136" fill="none" stroke="#6d4aff" stroke-width="8" stroke-linecap="round"/>
+  <path d="m432 251 15 2-6 14" fill="none" stroke="#6d4aff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="260" y="338" text-anchor="middle" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#133333">REPRESENT · PREDICT · EXPERIMENT</text>
+</svg>

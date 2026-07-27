@@ -1,0 +1,149 @@
+site_name: AI Virtual Cell Guide
+site_description: 人工智能虚拟细胞全景知识地图与可复现学习指南
+site_author: AI Virtual Cell Guide Contributors
+site_url: https://methylation5mc2026-jpg.github.io/AI-Virtual-Cell-Guide/
+repo_url: https://github.com/methylation5mc2026-jpg/AI-Virtual-Cell-Guide
+repo_name: methylation5mc2026-jpg/AI-Virtual-Cell-Guide
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: zh
+  logo: assets/aivc-logo.svg
+  favicon: assets/aivc-logo.svg
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - search.highlight
+    - search.suggest
+    - content.action.edit
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: teal
+      accent: deep purple
+      toggle:
+        icon: material/brightness-7
+        name: 切换至深色模式
+    - scheme: slate
+      primary: teal
+      accent: lime
+      toggle:
+        icon: material/brightness-4
+        name: 切换至浅色模式
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+  - minify:
+      minify_html: true
+
+extra_css:
+  - stylesheets/extra.css
+extra_javascript:
+  - javascripts/catalog.js
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/methylation5mc2026-jpg/AI-Virtual-Cell-Guide
+      name: GitHub
+  generator: false
+
+copyright: 内容 CC BY 4.0 · 代码 Apache-2.0 · 仅供教育与科研
+
+nav:
+  - 开始:
+      - 首页: index.md
+      - AIVC 的定义与边界: 00-start-here/index.md
+      - 如何使用本指南: 00-start-here/how-to-use.md
+      - 发展脉络: 00-start-here/history.md
+  - 知识体系:
+      - 基础:
+          - 生物学基础: 01-foundations/index.md
+          - 单细胞数据基础: 01-foundations/single-cell-basics.md
+          - 实验单位与重复: 01-foundations/experimental-design.md
+          - 测量与统计: 01-foundations/measurement-and-statistics.md
+          - 因果推断: 01-foundations/causal-inference.md
+      - 数据与实验:
+          - 数据版图: 02-data-and-experiments/index.md
+          - scRNA-seq: 02-data-and-experiments/scrna-seq.md
+          - 染色质、蛋白与多组学: 02-data-and-experiments/chromatin-protein-multiomics.md
+          - 空间与成像: 02-data-and-experiments/spatial-imaging.md
+          - 扰动设计: 02-data-and-experiments/perturbation-design.md
+          - Perturb-seq: 02-data-and-experiments/perturbation-experiments.md
+          - 时间与谱系: 02-data-and-experiments/temporal-lineage.md
+      - 模型:
+          - 模型版图: 03-models/index.md
+          - 从基线到基础模型: 03-models/baselines-to-foundation-models.md
+          - 统计与概率基线: 03-models/probabilistic-baselines.md
+          - 单细胞基础模型: 03-models/foundation-models.md
+          - 扰动模型: 03-models/perturbation-models.md
+          - 动力学与输运: 03-models/dynamics-and-transport.md
+          - 多模态与机理混合: 03-models/multimodal-hybrid.md
+      - 任务:
+          - 任务版图: 04-tasks/index.md
+          - 表征与整合: 04-tasks/representation-integration.md
+          - 扰动响应预测: 04-tasks/perturbation-prediction.md
+          - 状态转换: 04-tasks/state-transition.md
+          - 虚拟实验: 04-tasks/virtual-experiments.md
+      - 评测:
+          - 评测原则: 05-evaluation/index.md
+          - 数据拆分与泄漏: 05-evaluation/splits-and-leakage.md
+          - 指标与不确定性: 05-evaluation/metrics-uncertainty.md
+          - 复现与生物验证: 05-evaluation/biological-validation.md
+      - 应用:
+          - 应用与证据阶段: 06-applications/index.md
+          - 应用案例与证据卡: 06-applications/evidence-and-case-studies.md
+  - 学习路线:
+      - AI → 生物: learning-paths/ai-to-biology.md
+      - 生物 → AI: learning-paths/biology-to-ai.md
+      - 研究前沿: learning-paths/research-frontiers.md
+      - 术语表: glossary.md
+  - 实践:
+      - 扰动响应预测: tutorials/perturbation-response/index.md
+      - 环境与数据: tutorials/perturbation-response/setup.md
+      - Arc 官方评测扩展: tutorials/perturbation-response/arc-extension.md
+      - Notebook 01：问题定义: tutorials/perturbation-response/notebooks/01-problem-formulation.md
+      - Notebook 02：数据与 QC: tutorials/perturbation-response/notebooks/02-anndata-qc-and-de.md
+      - Notebook 03：拆分与泄漏: tutorials/perturbation-response/notebooks/03-condition-split-and-leakage.md
+      - Notebook 04：朴素基线: tutorials/perturbation-response/notebooks/04-naive-baselines.md
+      - Notebook 05：接口冒烟模型: tutorials/perturbation-response/notebooks/05-label-hash-smoke-model.md
+      - Notebook 06：评测: tutorials/perturbation-response/notebooks/06-evaluation-and-arc-mapping.md
+      - GEARS × Norman（Colab GPU）: tutorials/perturbation-response/notebooks/gears-norman-colab.md
+  - 资源目录:
+      - 使用说明: catalog/index.md
+      - 论文: catalog/papers.md
+      - 模型: catalog/models.md
+      - 数据集: catalog/datasets.md
+      - 基准: catalog/benchmarks.md
+      - 工具、课程与组织: catalog/tools-courses-orgs.md
+  - 社区:
+      - 生态、组织与挑战: 07-ecosystem/index.md
+      - 贡献与审校: community/contributing.md
+      - 复现审计: community/reproducibility-audit.md
+      - 试读与可用性验收: community/review-protocol.md
+      - 第二轮迭代: community/roadmap.md

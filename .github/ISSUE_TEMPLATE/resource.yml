@@ -1,0 +1,45 @@
+name: 新增资源
+description: 提议新增论文、模型、数据集、基准、工具、课程或组织
+title: "[Resource] "
+labels: ["catalog"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 资源类型
+      options: [论文, 模型, 数据集, 基准, 工具, 课程, 组织]
+    validations:
+      required: true
+  - type: input
+    id: primary_source
+    attributes:
+      label: 一手来源
+      description: 论文、官方仓库、数据主页或机构页面的 HTTPS 链接
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: 收录理由
+      description: 用中文说明它补充了哪项能力、任务或证据。
+    validations:
+      required: true
+  - type: input
+    id: license
+    attributes:
+      label: 许可证
+    validations:
+      required: true
+  - type: dropdown
+    id: reproducibility
+    attributes:
+      label: 复现状态
+      options: [代码＋数据, 权重＋代码, 仅代码, 仅数据, 仅文档, 闭源]
+    validations:
+      required: true
+  - type: textarea
+    id: limitations
+    attributes:
+      label: 已知限制
+    validations:
+      required: true

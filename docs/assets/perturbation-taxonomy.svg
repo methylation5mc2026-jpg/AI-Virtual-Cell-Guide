@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 570" role="img" aria-labelledby="title desc">
+  <title id="title">细胞扰动类型谱系</title>
+  <desc id="desc">遗传、化学、环境和状态扰动及其剂量时间组合维度</desc>
+  <defs><style>.h{font:700 24px Arial,sans-serif;fill:#133333}.b{font:17px Arial,sans-serif;fill:#42615d}.box{fill:#fff;stroke:#b8d8d2;stroke-width:3}.line{stroke:#087f6d;stroke-width:4;fill:none}</style></defs>
+  <rect width="1120" height="570" rx="28" fill="#f5fbfa"/>
+  <text x="560" y="50" text-anchor="middle" class="h">扰动不是一个标签：机制、剂量、时间和组合共同定义干预</text>
+  <rect x="420" y="85" width="280" height="80" rx="20" class="box"/><text x="560" y="135" text-anchor="middle" class="h">细胞扰动</text>
+  <path d="M560 165v50M140 215h840M140 215v50M420 215v50M700 215v50M980 215v50" class="line"/>
+  <g>
+    <rect x="40" y="265" width="200" height="185" rx="20" class="box"/><text x="140" y="305" text-anchor="middle" class="h">遗传</text><text x="140" y="345" text-anchor="middle" class="b">KO · CRISPRi</text><text x="140" y="377" text-anchor="middle" class="b">CRISPRa · 组合</text><text x="140" y="409" text-anchor="middle" class="b">编辑效率 / 脱靶</text>
+    <rect x="320" y="265" width="200" height="185" rx="20" class="box"/><text x="420" y="305" text-anchor="middle" class="h">化学</text><text x="420" y="345" text-anchor="middle" class="b">小分子 · 生物制剂</text><text x="420" y="377" text-anchor="middle" class="b">剂量 · 暴露时间</text><text x="420" y="409" text-anchor="middle" class="b">溶剂 / 载体控制</text>
+    <rect x="600" y="265" width="200" height="185" rx="20" class="box"/><text x="700" y="305" text-anchor="middle" class="h">环境</text><text x="700" y="345" text-anchor="middle" class="b">营养 · 缺氧 · 温度</text><text x="700" y="377" text-anchor="middle" class="b">力学 · 共培养</text><text x="700" y="409" text-anchor="middle" class="b">连续暴露与恢复</text>
+    <rect x="880" y="265" width="200" height="185" rx="20" class="box"/><text x="980" y="305" text-anchor="middle" class="h">状态</text><text x="980" y="345" text-anchor="middle" class="b">疾病 · 分化 · 衰老</text><text x="980" y="377" text-anchor="middle" class="b">非随机背景差异</text><text x="980" y="409" text-anchor="middle" class="b">需因果识别策略</text>
+  </g>
+  <rect x="180" y="485" width="760" height="55" rx="18" fill="#eeeaff" stroke="#c8bcff" stroke-width="3"/>
+  <text x="560" y="520" text-anchor="middle" class="b">每个条件还需记录：细胞背景 × 批次 × 重复 × 剂量 × 时间 × 组合顺序</text>
+</svg>

@@ -1,0 +1,618 @@
+catalog_version: 2
+kind: tools-courses-orgs
+entries:
+- id: tool-anndata
+  title_zh: AnnData
+  title_en: AnnData
+  year: 2017
+  category: 数据结构
+  summary_zh: 面向带注释矩阵的数据结构，是 Python 单细胞生态中表达矩阵、细胞元数据、基因元数据和多层数据的共同契约。
+  tasks:
+  - data management
+  - interoperability
+  modalities:
+  - single-cell-general
+  - multiome
+  perturbation_types:
+  - none
+  species:
+  - multi-species
+  context: 单细胞与空间组学分析
+  links:
+    paper: https://doi.org/10.1101/2021.12.16.473007
+    code: https://github.com/scverse/anndata
+    weights: null
+    data: null
+    project: https://anndata.readthedocs.io/
+  publication_status: peer-reviewed
+  reproducibility: code-only
+  recommendation: core
+  evidence_stage: not-applicable
+  license: BSD-3-Clause
+  compute: CPU；内存需求取决于矩阵规模和稀疏表示
+  compute_tier: cpu
+  limitations: 数据层的语义并非由格式自动保证，必须额外记录归一化、批次与实验条件。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: tool-scanpy
+  title_zh: Scanpy
+  title_en: Scanpy
+  year: 2018
+  category: 分析工具
+  summary_zh: 基于 AnnData 的可扩展单细胞分析工具，覆盖质控、归一化、降维、聚类、差异表达和可视化。
+  tasks:
+  - quality control
+  - clustering
+  - differential expression
+  modalities:
+  - scRNA-seq
+  perturbation_types:
+  - none
+  species:
+  - multi-species
+  context: Python 单细胞分析工作流
+  links:
+    paper: https://doi.org/10.1186/s13059-017-1382-0
+    code: https://github.com/scverse/scanpy
+    weights: null
+    data: null
+    project: https://scanpy.readthedocs.io/
+  publication_status: peer-reviewed
+  reproducibility: code-only
+  recommendation: core
+  evidence_stage: not-applicable
+  license: BSD-3-Clause
+  compute: CPU；大规模邻居图和降维需要较高内存
+  compute_tier: cpu
+  limitations: 默认参数不是通用最佳实践；统计检验与预处理必须匹配实验设计。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: tool-scvi-tools
+  title_zh: scvi-tools
+  title_en: scvi-tools
+  year: 2022
+  category: 概率建模工具
+  summary_zh: 为单细胞和空间组学提供概率生成模型、统一接口与教程，适合学习和比较 scVI 系列方法。
+  tasks:
+  - representation learning
+  - batch integration
+  - differential expression
+  modalities:
+  - scRNA-seq
+  - scATAC-seq
+  - spatial-transcriptomics
+  - multiome
+  perturbation_types:
+  - none
+  species:
+  - multi-species
+  context: 概率单细胞建模
+  links:
+    paper: https://doi.org/10.1038/s41587-021-01206-w
+    code: https://github.com/scverse/scvi-tools
+    weights: null
+    data: null
+    project: https://scvi-tools.org/
+  publication_status: peer-reviewed
+  reproducibility: code-only
+  recommendation: core
+  evidence_stage: not-applicable
+  license: BSD-3-Clause
+  compute: 小数据可用 CPU；训练通常推荐 GPU
+  compute_tier: single-gpu
+  limitations: 模型假设、批次设置和潜变量解释需要通过下游任务与生物学对照独立验证。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: tool-pertpy
+  title_zh: PertPy
+  title_en: PertPy
+  year: 2024
+  category: 扰动分析工具
+  summary_zh: 面向单细胞扰动数据的 Python 工具箱，汇集距离、差异、混杂校正和响应分析方法。
+  tasks:
+  - perturbation analysis
+  - differential expression
+  - response comparison
+  modalities:
+  - scRNA-seq
+  perturbation_types:
+  - none
+  species:
+  - multi-species
+  context: 遗传与化学单细胞扰动实验
+  links:
+    paper: https://doi.org/10.1038/s41592-025-02909-7
+    code: https://github.com/scverse/pertpy
+    weights: null
+    data: null
+    project: https://pertpy.readthedocs.io/
+  publication_status: peer-reviewed
+  reproducibility: code-only
+  recommendation: recommended
+  evidence_stage: not-applicable
+  license: Apache-2.0
+  compute: CPU；部分方法随细胞数和基因数增加而显著变慢
+  compute_tier: cpu
+  limitations: 工具统一了接口，但不能替代对实验重复、批次和适用统计假设的审查。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: tool-seurat
+  title_zh: Seurat
+  title_en: Seurat
+  year: 2015
+  category: 分析工具
+  summary_zh: R 语言单细胞分析生态，覆盖预处理、整合、多模态、空间分析和可视化，并拥有广泛教程。
+  tasks:
+  - quality control
+  - integration
+  - multimodal analysis
+  modalities:
+  - scRNA-seq
+  - scATAC-seq
+  - spatial-transcriptomics
+  - multiome
+  perturbation_types:
+  - none
+  species:
+  - multi-species
+  context: R 语言单细胞工作流
+  links:
+    paper: https://doi.org/10.1038/nbt.3192
+    code: https://github.com/satijalab/seurat
+    weights: null
+    data: null
+    project: https://satijalab.org/seurat/
+  publication_status: peer-reviewed
+  reproducibility: code-only
+  recommendation: recommended
+  evidence_stage: not-applicable
+  license: MIT
+  compute: CPU；大对象整合需要较高内存
+  compute_tier: cpu
+  limitations: 不同版本的数据层与接口存在变化，跨项目复现必须固定版本并记录参数。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: org-scverse
+  title_zh: scverse
+  title_en: scverse
+  year: 2021
+  category: 开源生态
+  summary_zh: 维护 AnnData、Scanpy、scvi-tools 等核心 Python 单细胞工具，并推动兼容性、治理和教育资源。
+  tasks:
+  - software ecosystem
+  - community training
+  modalities:
+  - single-cell-general
+  - spatial-transcriptomics
+  - multiome
+  perturbation_types:
+  - none
+  species:
+  - multi-species
+  context: 开源单细胞软件与社区
+  links:
+    paper: null
+    code: https://github.com/scverse
+    weights: null
+    data: null
+    project: https://scverse.org/
+  publication_status: product
+  reproducibility: documentation-only
+  recommendation: recommended
+  evidence_stage: deployed
+  license: 各项目许可证不同
+  compute: 不适用；取决于所选工具
+  compute_tier: unknown
+  limitations: 生态覆盖广但并非质量背书，具体方法仍需回到论文、版本和基准。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: org-arc-virtual-cell
+  title_zh: Arc 虚拟细胞计划
+  title_en: Arc Virtual Cell Initiative
+  year: 2024
+  category: 研究计划
+  summary_zh: 围绕大规模扰动数据、预测模型和标准化评测推进虚拟细胞研究，并组织公开挑战。
+  tasks:
+  - perturbation prediction
+  - benchmarking
+  - dataset generation
+  modalities:
+  - scRNA-seq
+  perturbation_types:
+  - none
+  species:
+  - human
+  context: 扰动预测与开放评测
+  links:
+    paper: null
+    code: https://github.com/ArcInstitute
+    weights: null
+    data: https://virtualcellchallenge.org/
+    project: https://arcinstitute.org/virtual-cell-initiative
+  publication_status: product
+  reproducibility: code-and-data
+  recommendation: recommended
+  evidence_stage: deployed
+  license: 各数据集与代码仓库分别声明
+  compute: 浏览资料无需计算；挑战模型通常需要 GPU 或集群
+  compute_tier: single-gpu
+  limitations: 挑战任务只覆盖 AIVC 的部分能力，排行榜不能替代跨数据与湿实验验证。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: platform-czi-virtual-cells
+  title_zh: CZI 虚拟细胞平台
+  title_en: CZI Virtual Cells Platform
+  year: 2024
+  category: 模型平台
+  summary_zh: 集中展示单细胞模型、数据、任务与教程的开放平台，便于比较模型卡、输入输出和使用入口。
+  tasks:
+  - model discovery
+  - dataset discovery
+  - tutorials
+  modalities:
+  - single-cell-general
+  - multiome
+  perturbation_types:
+  - none
+  species:
+  - multi-species
+  context: 虚拟细胞模型与资源发现
+  links:
+    paper: null
+    code: null
+    weights: null
+    data: null
+    project: https://virtualcellmodels.cziscience.com/
+  publication_status: product
+  reproducibility: documentation-only
+  recommendation: recommended
+  evidence_stage: deployed
+  license: 各模型与数据分别声明
+  compute: 浏览资料无需计算；运行需求取决于模型
+  compute_tier: unknown
+  limitations: 平台元数据持续演化，收录不等于独立复现或生物学有效性认证。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: course-single-cell-best-practices
+  title_zh: 单细胞最佳实践
+  title_en: Single-cell best practices
+  year: 2023
+  category: 开放课程
+  summary_zh: 从实验设计、质控、整合到下游分析系统讲解单细胞最佳实践，适合作为 AI 学习者的生物数据分析教材。
+  tasks:
+  - education
+  - quality control
+  - analysis workflow
+  modalities:
+  - scRNA-seq
+  - scATAC-seq
+  - spatial-transcriptomics
+  - multiome
+  perturbation_types:
+  - none
+  species:
+  - multi-species
+  context: 单细胞分析入门与参考
+  links:
+    paper: https://doi.org/10.1038/s41576-023-00586-w
+    code: https://github.com/theislab/single-cell-best-practices
+    weights: null
+    data: null
+    project: https://www.sc-best-practices.org/
+  publication_status: peer-reviewed
+  reproducibility: code-and-data
+  recommendation: core
+  evidence_stage: not-applicable
+  license: CC-BY-4.0
+  compute: 阅读无需计算；练习可用标准 CPU 环境
+  compute_tier: cpu
+  limitations: 不同平台和实验类型的细节更新很快，应用时应同时查阅当前工具文档。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: org-human-cell-atlas
+  title_zh: 人类细胞图谱联盟
+  title_en: Human Cell Atlas
+  year: 2016
+  category: 国际联盟
+  summary_zh: 通过开放数据、标准、器官网络和培训建设人类细胞参考图谱，是跨组织表征和数据治理的重要来源。
+  tasks:
+  - reference atlas
+  - data standards
+  - community training
+  modalities:
+  - single-cell-general
+  - spatial-transcriptomics
+  - multiome
+  perturbation_types:
+  - none
+  species:
+  - human
+  context: 人体组织细胞图谱
+  links:
+    paper: https://doi.org/10.7554/eLife.27041
+    code: https://github.com/HumanCellAtlas
+    weights: null
+    data: https://data.humancellatlas.org/
+    project: https://www.humancellatlas.org/
+  publication_status: peer-reviewed
+  reproducibility: data-only
+  recommendation: recommended
+  evidence_stage: not-applicable
+  license: 各项目和数据集分别声明
+  compute: 浏览元数据无需计算；下载和分析图谱需要高内存或云资源
+  compute_tier: unknown
+  limitations: 图谱由不同实验和项目组成，跨研究比较仍需处理批次、同意范围与组织偏差。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: tool-spatialdata
+  title_zh: SpatialData
+  title_en: SpatialData
+  year: 2025
+  category: 空间数据框架
+  summary_zh: 统一表示图像、点、形状、标签和表格，并维护坐标变换关系。
+  tasks:
+  - spatial data management
+  - interoperability
+  modalities:
+  - spatial-transcriptomics
+  - imaging
+  - protein
+  perturbation_types:
+  - none
+  species:
+  - multi-species
+  context: 多平台空间组学数据
+  links:
+    paper: https://doi.org/10.1038/s41592-024-02212-x
+    code: https://github.com/scverse/spatialdata
+    weights: null
+    data: null
+    project: https://spatialdata.scverse.org/
+  publication_status: peer-reviewed
+  reproducibility: code-only
+  recommendation: recommended
+  evidence_stage: deployed
+  license: BSD-3-Clause
+  compute: CPU；大图像需要分块存储
+  compute_tier: cpu
+  limitations: 格式仍在演进，写出前需固定版本并验证坐标变换。
+  last_verified: '2026-07-28'
+  verification_status: verified
+- id: tool-squidpy
+  title_zh: Squidpy
+  title_en: Squidpy
+  year: 2022
+  category: 空间组学分析
+  summary_zh: 基于 AnnData/SpatialData 提供空间邻域、图像特征、空间统计和可视化。
+  tasks:
+  - spatial analysis
+  - image features
+  - neighborhood analysis
+  modalities:
+  - spatial-transcriptomics
+  - imaging
+  perturbation_types:
+  - none
+  species:
+  - multi-species
+  context: 点位级、细胞级和亚细胞空间数据
+  links:
+    paper: https://doi.org/10.1038/s41592-021-01358-2
+    code: https://github.com/scverse/squidpy
+    weights: null
+    data: null
+    project: https://squidpy.readthedocs.io/
+  publication_status: peer-reviewed
+  reproducibility: code-only
+  recommendation: recommended
+  evidence_stage: deployed
+  license: BSD-3-Clause
+  compute: CPU 为主，图像任务可使用 GPU
+  compute_tier: cpu
+  limitations: 部分分析依赖分割、邻域图和空间尺度选择。
+  last_verified: '2026-07-28'
+  verification_status: verified
+- id: tool-napari
+  title_zh: napari
+  title_en: napari
+  year: 2019
+  category: 多维图像查看器
+  summary_zh: 面向科学 Python 的多维图像、标签、点和形状交互查看及插件平台。
+  tasks:
+  - image visualization
+  - annotation
+  - quality control
+  modalities:
+  - imaging
+  perturbation_types:
+  - none
+  species:
+  - not-applicable
+  context: 二维至多维显微图像
+  links:
+    paper: null
+    code: https://github.com/napari/napari
+    weights: null
+    data: null
+    project: https://napari.org/
+  publication_status: product
+  reproducibility: code-only
+  recommendation: recommended
+  evidence_stage: deployed
+  license: BSD-3-Clause
+  compute: 桌面 CPU；大体积渲染受显存影响
+  compute_tier: cpu
+  limitations: 插件质量和格式兼容性不一，不适合作为无审计的批处理真值来源。
+  last_verified: '2026-07-28'
+  verification_status: verified
+- id: tool-vitessce
+  title_zh: Vitessce
+  title_en: Vitessce
+  year: 2025
+  category: 多模态可视化
+  summary_zh: 在浏览器和 Notebook 中联动浏览空间、成像和单细胞多组学数据。
+  tasks:
+  - multimodal visualization
+  - spatial exploration
+  modalities:
+  - single-cell-general
+  - spatial-transcriptomics
+  - imaging
+  - multiome
+  perturbation_types:
+  - none
+  species:
+  - multi-species
+  context: 门户、浏览器与 Notebook 可视化
+  links:
+    paper: https://doi.org/10.1038/s41592-024-02436-x
+    code: https://github.com/vitessce/vitessce
+    weights: null
+    data: null
+    project: https://vitessce.io/
+  publication_status: peer-reviewed
+  reproducibility: code-only
+  recommendation: recommended
+  evidence_stage: deployed
+  license: MIT
+  compute: 浏览器端；大数据建议分块和远程对象存储
+  compute_tier: cpu
+  limitations: 可视化不能替代统计验证，远程数据配置需考虑访问权限和版本。
+  last_verified: '2026-07-28'
+  verification_status: verified
+- id: tool-cellprofiler
+  title_zh: CellProfiler
+  title_en: CellProfiler
+  year: 2006
+  category: 图像分析工作流
+  summary_zh: 以可复用流水线执行细胞分割、特征提取和高通量图像质控。
+  tasks:
+  - image analysis
+  - feature extraction
+  - quality control
+  modalities:
+  - imaging
+  perturbation_types:
+  - none
+  species:
+  - multi-species
+  context: 高内涵显微图像和 Cell Painting
+  links:
+    paper: https://doi.org/10.1186/gb-2006-7-10-r100
+    code: https://github.com/CellProfiler/CellProfiler
+    weights: null
+    data: null
+    project: https://cellprofiler.org/
+  publication_status: peer-reviewed
+  reproducibility: code-only
+  recommendation: recommended
+  evidence_stage: deployed
+  license: BSD-3-Clause
+  compute: CPU；高通量任务可并行
+  compute_tier: cpu
+  limitations: 规则和参数需要按成像批次验证，错误分割会系统性污染形态特征。
+  last_verified: '2026-07-28'
+  verification_status: verified
+- id: standard-ome-zarr
+  title_zh: OME-Zarr / OME-NGFF
+  title_en: OME-Zarr Next-Generation File Format
+  year: 2026
+  category: 成像数据标准
+  summary_zh: 为多尺度图像、标签、坐标变换和高内涵筛选定义云原生元数据规范。
+  tasks:
+  - image storage
+  - interoperability
+  - cloud access
+  modalities:
+  - imaging
+  perturbation_types:
+  - none
+  species:
+  - not-applicable
+  context: 多维显微图像与标签
+  links:
+    paper: null
+    code: https://github.com/ome/ngff
+    weights: null
+    data: null
+    project: https://ngff.openmicroscopy.org/specifications/
+  publication_status: product
+  reproducibility: documentation-only
+  recommendation: recommended
+  evidence_stage: deployed
+  license: Specification terms; implementations vary
+  compute: 与数据规模相关，支持分块和对象存储
+  compute_tier: cpu
+  limitations: 规范和实现版本仍在演进，交换数据时必须声明版本并做读回测试。
+  last_verified: '2026-07-28'
+  verification_status: verified
+- id: tool-singlecellexperiment
+  title_zh: SingleCellExperiment
+  title_en: SingleCellExperiment
+  year: 2017
+  category: 单细胞数据容器
+  summary_zh: Bioconductor 中存储计数、样本元数据、特征元数据和降维结果的标准类。
+  tasks:
+  - data management
+  - interoperability
+  modalities:
+  - single-cell-general
+  - scATAC-seq
+  - multiome
+  perturbation_types:
+  - none
+  species:
+  - multi-species
+  context: R/Bioconductor 单细胞工作流
+  links:
+    paper: null
+    code: https://github.com/drisso/SingleCellExperiment
+    weights: null
+    data: null
+    project: https://bioconductor.org/packages/SingleCellExperiment/
+  publication_status: product
+  reproducibility: code-only
+  recommendation: recommended
+  evidence_stage: deployed
+  license: Artistic-2.0
+  compute: CPU
+  compute_tier: cpu
+  limitations: 与 AnnData 互转时需要检查稀疏矩阵、因子、替代实验和元数据类型。
+  last_verified: '2026-07-28'
+  verification_status: verified
+- id: platform-openproblems-bio
+  title_zh: Open Problems in Single Cell Analysis
+  title_en: Open Problems in Single Cell Analysis
+  year: 2026
+  category: 开放基准平台
+  summary_zh: 以可复用任务、数据加载器和评测脚本组织单细胞与多组学开放问题。
+  tasks:
+  - benchmarking
+  - reproducible workflows
+  modalities:
+  - scRNA-seq
+  - scATAC-seq
+  - multiome
+  perturbation_types:
+  - chemical
+  - none
+  species:
+  - human
+  - mouse
+  context: 单细胞竞赛与社区基准
+  links:
+    paper: null
+    code: https://github.com/openproblems-bio/openproblems
+    weights: null
+    data: https://openproblems.bio/
+    project: https://openproblems.bio/
+  publication_status: product
+  reproducibility: code-and-data
+  recommendation: recommended
+  evidence_stage: deployed
+  license: MIT; dataset-specific terms
+  compute: 任务跨度从 CPU 到 GPU
+  compute_tier: single-gpu
+  limitations: 历史竞赛链接和运行环境会变化，复现时需固定任务及数据版本。
+  last_verified: '2026-07-28'
+  verification_status: verified

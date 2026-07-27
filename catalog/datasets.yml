@@ -1,0 +1,673 @@
+catalog_version: 2
+kind: datasets
+entries:
+- id: dataset-cellxgene-census
+  title_zh: CELLxGENE Census
+  title_en: CZ CELLxGENE Discover Census
+  year: 2023
+  category: 单细胞图谱
+  summary_zh: 对CELLxGENE公开单细胞数据进行版本化、统一访问和基础标准化，是许多单细胞基础模型的预训练来源。
+  tasks:
+  - pretraining
+  - atlas mapping
+  - reference annotation
+  modalities:
+  - scRNA-seq
+  perturbation_types:
+  - none
+  species:
+  - human
+  - mouse
+  context: 多组织、疾病和研究来源
+  links:
+    paper: https://doi.org/10.1101/2023.10.30.563174
+    code: https://github.com/chanzuckerberg/cellxgene-census
+    weights: null
+    data: https://registry.opendata.aws/cellxgene-census/
+    project: https://chanzuckerberg.github.io/cellxgene-census/
+  publication_status: technical-report
+  reproducibility: code-and-data
+  recommendation: core
+  evidence_stage: not-applicable
+  license: 各数据集许可证不同；使用前检查Census元数据
+  compute: 可按查询子集；全量使用需要云存储与大内存
+  compute_tier: unknown
+  limitations: 聚合图谱存在研究选择、标签不一致、重复样本和平台偏差。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: dataset-human-cell-atlas
+  title_zh: 人类细胞图谱
+  title_en: Human Cell Atlas Data Portal
+  year: 2017
+  category: 国际细胞图谱
+  summary_zh: 以开放标准构建人体细胞参考图谱，提供项目、数据和伦理治理框架。
+  tasks:
+  - cell atlas
+  - reference mapping
+  - pretraining
+  modalities:
+  - multiome
+  - spatial-transcriptomics
+  perturbation_types:
+  - none
+  species:
+  - human
+  context: 多组织、发育、健康与疾病
+  links:
+    paper: https://doi.org/10.7554/eLife.27041
+    code: https://github.com/HumanCellAtlas
+    weights: null
+    data: https://data.humancellatlas.org/
+    project: https://www.humancellatlas.org/
+  publication_status: peer-reviewed
+  reproducibility: data-only
+  recommendation: core
+  evidence_stage: not-applicable
+  license: 数据集级许可与访问条件
+  compute: 按项目下载；全量整合需要云计算
+  compute_tier: unknown
+  limitations: 图谱仍在建设；组织和人群覆盖不均，标签来自不同分析流程。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: dataset-hubmap
+  title_zh: HuBMAP
+  title_en: Human BioMolecular Atlas Program
+  year: 2019
+  category: 空间多组学图谱
+  summary_zh: 提供人体组织的空间、多组学与成像数据，对AIVC跨尺度和组织上下文研究重要。
+  tasks:
+  - spatial atlas
+  - multimodal integration
+  - tissue mapping
+  modalities:
+  - spatial-transcriptomics
+  - imaging
+  - protein
+  - multiome
+  perturbation_types:
+  - none
+  species:
+  - human
+  context: 多人体器官与组织
+  links:
+    paper: https://doi.org/10.1038/s41586-019-1629-x
+    code: https://github.com/hubmapconsortium
+    weights: null
+    data: https://portal.hubmapconsortium.org/
+    project: https://hubmapconsortium.org/
+  publication_status: peer-reviewed
+  reproducibility: data-only
+  recommendation: recommended
+  evidence_stage: not-applicable
+  license: 数据集级许可；部分人类数据受控
+  compute: 模态和切片数据可能非常大
+  compute_tier: unknown
+  limitations: 多中心、多平台异质性高；部分数据访问和再分发受限。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: dataset-tabula-sapiens
+  title_zh: Tabula Sapiens
+  title_en: Tabula Sapiens
+  year: 2022
+  category: 跨组织单细胞图谱
+  summary_zh: 来自多名供体、覆盖多组织的人类单细胞转录组图谱，适合研究组织与供体上下文。
+  tasks:
+  - cell annotation
+  - atlas mapping
+  - pretraining
+  modalities:
+  - scRNA-seq
+  perturbation_types:
+  - none
+  species:
+  - human
+  context: 多供体、多器官健康组织
+  links:
+    paper: https://doi.org/10.1126/science.abl4896
+    code: https://github.com/czbiohub/tabula-sapiens
+    weights: null
+    data: https://cellxgene.cziscience.com/collections/e5f58829-1a66-40b5-a624-9046778e74f5
+    project: https://tabula-sapiens-portal.ds.czbiohub.org/
+  publication_status: peer-reviewed
+  reproducibility: code-and-data
+  recommendation: recommended
+  evidence_stage: not-applicable
+  license: 见数据门户
+  compute: 可按组织子集分析；全量需较大内存
+  compute_tier: unknown
+  limitations: 供体数量和健康组织采集流程限制人群与疾病泛化。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: dataset-scperturb
+  title_zh: scPerturb统一扰动数据
+  title_en: scPerturb Harmonized Single-Cell Perturbation Data
+  year: 2024
+  category: 扰动数据集合
+  summary_zh: 统一整理基因、药物和其他单细胞扰动数据，提供标准化h5ad和数据元信息。
+  tasks:
+  - perturbation prediction
+  - perturbation effect analysis
+  - benchmarking
+  modalities:
+  - scRNA-seq
+  perturbation_types:
+  - chemical
+  species:
+  - human
+  - mouse
+  context: 多实验、多细胞系与部分原代背景
+  links:
+    paper: https://doi.org/10.1038/s41592-023-02144-y
+    code: https://github.com/theislab/sc-pert
+    weights: null
+    data: https://zenodo.org/doi/10.5281/zenodo.7041848
+    project: https://www.sanderlab.org/scPerturb/
+  publication_status: peer-reviewed
+  reproducibility: code-and-data
+  recommendation: core
+  evidence_stage: not-applicable
+  license: 原数据集许可证各异；Zenodo记录提供汇总信息
+  compute: 单个数据集可单机处理
+  compute_tier: unknown
+  limitations: 跨研究预处理无法消除实验设计差异；统一格式不等于可直接合并训练。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: dataset-norman
+  title_zh: Norman 2019 Perturb-seq
+  title_en: Norman 2019 CRISPRa Perturb-seq
+  year: 2019
+  category: 基因组合扰动
+  summary_zh: K562单基因和双基因CRISPRa数据，被GEARS等模型广泛使用，也是本项目真实数据实践入口。
+  tasks:
+  - single perturbation prediction
+  - combinatorial perturbation
+  modalities:
+  - scRNA-seq
+  perturbation_types:
+  - genetic-activation
+  species:
+  - human
+  context: K562细胞系
+  links:
+    paper: https://doi.org/10.1126/science.aax4438
+    code: https://github.com/snap-stanford/GEARS
+    weights: null
+    data: https://dataverse.harvard.edu/dataverse/gears
+    project: https://github.com/snap-stanford/GEARS
+  publication_status: peer-reviewed
+  reproducibility: code-and-data
+  recommendation: core
+  evidence_stage: not-applicable
+  license: 见Harvard Dataverse和原论文
+  compute: CPU可完成基础分析；GEARS训练建议GPU
+  compute_tier: single-gpu
+  limitations: 单一癌细胞系和CRISPRa；常用处理版本可能与原始数据不同。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: dataset-replogle
+  title_zh: Replogle全基因组Perturb-seq
+  title_en: Replogle Genome-Scale Perturb-seq
+  year: 2022
+  category: 全基因组CRISPRi
+  summary_zh: 大规模基因敲低单细胞数据，支持基因功能、细胞程序和未见扰动预测研究。
+  tasks:
+  - gene function
+  - perturbation prediction
+  - regulatory programs
+  modalities:
+  - scRNA-seq
+  perturbation_types:
+  - genetic-knockdown
+  species:
+  - human
+  context: K562和RPE1等细胞系
+  links:
+    paper: https://doi.org/10.1016/j.cell.2022.05.013
+    code: https://gwps.wi.mit.edu/
+    weights: null
+    data: https://gwps.wi.mit.edu/
+    project: https://gwps.wi.mit.edu/
+  publication_status: peer-reviewed
+  reproducibility: code-and-data
+  recommendation: recommended
+  evidence_stage: not-applicable
+  license: 见数据门户和原论文
+  compute: 全量分析需要较大内存和存储
+  compute_tier: unknown
+  limitations: 主要为体外细胞系和转录组终点；不同处理版本需固定。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: dataset-sciplex
+  title_zh: sci-Plex化学扰动图谱
+  title_en: sci-Plex
+  year: 2020
+  category: 化学扰动
+  summary_zh: 通过组合索引大规模测量多细胞系、药物和剂量下的单细胞转录响应。
+  tasks:
+  - drug response
+  - dose response
+  - chemical screening
+  modalities:
+  - scRNA-seq
+  perturbation_types:
+  - chemical
+  species:
+  - human
+  context: A549、K562、MCF7等癌细胞系
+  links:
+    paper: https://doi.org/10.1126/science.aax6234
+    code: https://github.com/cole-trapnell-lab/sci-plex
+    weights: null
+    data: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE139944
+    project: https://github.com/cole-trapnell-lab/sci-plex
+  publication_status: peer-reviewed
+  reproducibility: code-and-data
+  recommendation: recommended
+  evidence_stage: not-applicable
+  license: GEO与官方仓库条款
+  compute: 全量分析需要大内存；子集可单机
+  compute_tier: unknown
+  limitations: 癌细胞系、特定时间点与药物面板限制生理外推。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: dataset-tahoe-100m
+  title_zh: Tahoe-100M
+  title_en: Tahoe-100M
+  year: 2025
+  category: 超大规模化学扰动
+  summary_zh: 约一亿单细胞转录组，覆盖五十个癌细胞系与上千药物剂量条件。
+  tasks:
+  - drug response
+  - cross-context prediction
+  - pretraining
+  modalities:
+  - scRNA-seq
+  perturbation_types:
+  - chemical
+  species:
+  - human
+  context: 50个癌细胞系
+  links:
+    paper: https://doi.org/10.1101/2025.02.20.639398
+    code: null
+    weights: null
+    data: https://huggingface.co/datasets/tahoebio/Tahoe-100M
+    project: https://huggingface.co/datasets/tahoebio/Tahoe-100M
+  publication_status: preprint
+  reproducibility: data-only
+  recommendation: recommended
+  evidence_stage: not-applicable
+  license: 见Hugging Face数据卡
+  compute: 全量需要流式或分布式处理
+  compute_tier: unknown
+  limitations: 癌细胞系、药物和固定读出时间不能覆盖复杂组织与患者反应。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: dataset-arc-vcc-2025
+  title_zh: Arc Virtual Cell Challenge 2025数据
+  title_en: Arc Virtual Cell Challenge 2025 Dataset
+  year: 2025
+  category: 评测扰动数据
+  summary_zh: 为未见基因扰动预测专门设计的H1人胚胎干细胞CRISPRi训练、验证和测试数据。
+  tasks:
+  - held-out perturbation prediction
+  - benchmarking
+  modalities:
+  - scRNA-seq
+  perturbation_types:
+  - genetic-knockdown
+  species:
+  - human
+  context: H1人胚胎干细胞
+  links:
+    paper: https://doi.org/10.1016/j.cell.2025.05.045
+    code: https://github.com/ArcInstitute/arc-virtual-cell-atlas
+    weights: null
+    data: https://github.com/ArcInstitute/arc-virtual-cell-atlas/tree/main/virtual-cell-challenge
+    project: https://virtualcellchallenge.org/
+  publication_status: peer-reviewed
+  reproducibility: code-and-data
+  recommendation: core
+  evidence_stage: not-applicable
+  license: Arc数据与挑战条款；使用前核查最新版本
+  compute: 约30万高深度细胞；下载和分析需较大内存
+  compute_tier: unknown
+  limitations: 单一细胞背景；指标和测试设计不能代表所有AIVC用途。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: dataset-scbasecount
+  title_zh: Arc scBaseCount
+  title_en: scBaseCount
+  year: 2025
+  category: 统一计数图谱
+  summary_zh: Arc用于收集、整理并重新处理公开单细胞原始计数的图谱基础。
+  tasks:
+  - pretraining
+  - atlas curation
+  - cross-dataset analysis
+  modalities:
+  - scRNA-seq
+  perturbation_types:
+  - none
+  species:
+  - human
+  context: 多研究和细胞背景的公开数据
+  links:
+    paper: null
+    code: https://github.com/ArcInstitute/arc-virtual-cell-atlas
+    weights: null
+    data: https://github.com/ArcInstitute/arc-virtual-cell-atlas
+    project: https://arcinstitute.org/virtual-cell-initiative
+  publication_status: technical-report
+  reproducibility: code-and-data
+  recommendation: recommended
+  evidence_stage: not-applicable
+  license: 数据集级许可证与Arc发布条款
+  compute: 全量规模面向云与分布式处理
+  compute_tier: unknown
+  limitations: 自动化收集与重处理仍受原始元数据、许可和质量差异影响。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: dataset-human-protein-atlas-cell
+  title_zh: 人类蛋白质图谱细胞图谱
+  title_en: Human Protein Atlas Cell Atlas
+  year: 2017
+  category: 细胞成像与亚细胞定位
+  summary_zh: 提供人类蛋白在细胞和亚细胞结构中的定位图像与注释，为成像型虚拟细胞提供参考。
+  tasks:
+  - protein localization
+  - cell imaging
+  - multimodal representation
+  modalities:
+  - imaging
+  - protein
+  perturbation_types:
+  - none
+  species:
+  - human
+  context: 多种人类细胞系与亚细胞结构
+  links:
+    paper: https://doi.org/10.1126/science.aal3321
+    code: null
+    weights: null
+    data: https://www.proteinatlas.org/humanproteome/subcellular/data
+    project: https://www.proteinatlas.org/humanproteome/subcellular
+  publication_status: peer-reviewed
+  reproducibility: data-only
+  recommendation: recommended
+  evidence_stage: not-applicable
+  license: Human Protein Atlas数据使用条款
+  compute: 图像批量训练需要GPU和较大存储
+  compute_tier: single-gpu
+  limitations: 抗体特异性、细胞系覆盖和固定成像条件影响外推。
+  last_verified: 2026-07-28
+  verification_status: verified
+- id: dataset-jump-cell-painting
+  title_zh: JUMP Cell Painting
+  title_en: JUMP Cell Painting Consortium Dataset
+  year: 2024
+  category: 扰动形态组学
+  summary_zh: 大规模遗传和化学扰动 Cell Painting 图像与形态特征集合。
+  tasks:
+  - morphological profiling
+  - mechanism retrieval
+  modalities:
+  - imaging
+  perturbation_types:
+  - genetic-knockout
+  - chemical
+  species:
+  - human
+  context: 培养细胞高内涵显微成像
+  links:
+    paper: https://doi.org/10.1038/s41592-024-02528-8
+    code: https://github.com/jump-cellpainting/datasets
+    weights: null
+    data: https://registry.opendata.aws/cellpainting-gallery/
+    project: https://jump-cellpainting.broadinstitute.org/
+  publication_status: peer-reviewed
+  reproducibility: code-and-data
+  recommendation: recommended
+  evidence_stage: not-applicable
+  license: CC0 and accession-specific terms
+  compute: 原始图像需要 TB 级存储；特征表可用 CPU
+  compute_tier: multi-gpu
+  limitations: 多批次、多中心和板位效应显著，必须按实验结构拆分。
+  last_verified: '2026-07-28'
+  verification_status: verified
+- id: dataset-rxrx3
+  title_zh: RxRx3
+  title_en: 'RxRx3: Phenomics Map of Biology'
+  year: 2023
+  category: 扰动形态组学
+  summary_zh: 包含 CRISPR 基因敲除和化合物处理的数百万张高内涵细胞图像。
+  tasks:
+  - representation learning
+  - drug-target retrieval
+  modalities:
+  - imaging
+  perturbation_types:
+  - genetic-knockout
+  - chemical
+  species:
+  - human
+  context: HUVEC 细胞与多通道显微图像
+  links:
+    paper: https://doi.org/10.1101/2023.02.07.527350
+    code: null
+    weights: null
+    data: https://www.rxrx.ai/rxrx3
+    project: https://www.rxrx.ai/rxrx3
+  publication_status: preprint
+  reproducibility: data-only
+  recommendation: recommended
+  evidence_stage: not-applicable
+  license: Recursion Non-Commercial EULA
+  compute: 完整数据约 83 TB，需分布式存储与 GPU
+  compute_tier: multi-gpu
+  limitations: 访问方式和非商业许可限制复现与再分发；批次结构需保留。
+  last_verified: '2026-07-28'
+  verification_status: verified
+- id: dataset-allen-cell
+  title_zh: Allen Integrated Cell
+  title_en: Allen Cell Explorer Data
+  year: 2026
+  category: 三维细胞成像
+  summary_zh: 提供人 iPSC 的三维细胞、细胞器、分割、特征和部分扰动成像数据。
+  tasks:
+  - cell morphology
+  - organelle localization
+  - image generation
+  modalities:
+  - imaging
+  perturbation_types:
+  - chemical
+  - none
+  species:
+  - human
+  context: 人诱导多能干细胞三维荧光成像
+  links:
+    paper: null
+    code: null
+    weights: null
+    data: https://www.allencell.org/data-downloading.html
+    project: https://www.allencell.org/
+  publication_status: product
+  reproducibility: data-only
+  recommendation: recommended
+  evidence_stage: not-applicable
+  license: Allen Institute data terms
+  compute: 单个数据集从 GB 到数百 GB
+  compute_tier: single-gpu
+  limitations: 主要集中于特定 iPSC 系和标记结构，不能代表全部细胞背景。
+  last_verified: '2026-07-28'
+  verification_status: verified
+- id: dataset-bbbc
+  title_zh: Broad 生物图像基准集合
+  title_en: Broad Bioimage Benchmark Collection
+  year: 2012
+  category: 生物图像基准数据
+  summary_zh: 汇集带人工或合成真值的显微图像，用于分割、分类和形态分析验证。
+  tasks:
+  - segmentation
+  - classification
+  - morphological profiling
+  modalities:
+  - imaging
+  perturbation_types:
+  - chemical
+  - none
+  species:
+  - multi-species
+  context: 多种显微技术、细胞和组织
+  links:
+    paper: https://doi.org/10.1038/nmeth.2083
+    code: null
+    weights: null
+    data: https://bbbc.broadinstitute.org/image_sets
+    project: https://bbbc.broadinstitute.org/
+  publication_status: peer-reviewed
+  reproducibility: data-only
+  recommendation: recommended
+  evidence_stage: not-applicable
+  license: Dataset-specific licenses
+  compute: 从 MB 到 TB，按图像集选择
+  compute_tier: cpu
+  limitations: 各图像集采集条件和真值定义不同，不能混合为单一排行榜。
+  last_verified: '2026-07-28'
+  verification_status: verified
+- id: dataset-tabula-muris-senis
+  title_zh: Tabula Muris Senis
+  title_en: Tabula Muris Senis
+  year: 2020
+  category: 小鼠衰老图谱
+  summary_zh: 跨年龄、组织和性别的小鼠单细胞转录组，为年龄泛化提供参考。
+  tasks:
+  - cell annotation
+  - aging atlas
+  - cross-tissue integration
+  modalities:
+  - scRNA-seq
+  perturbation_types:
+  - none
+  species:
+  - mouse
+  context: 多组织衰老细胞图谱
+  links:
+    paper: https://doi.org/10.1038/s41586-020-2496-1
+    code: https://github.com/czbiohub/tabula-muris-senis
+    weights: null
+    data: https://figshare.com/projects/Tabula_Muris_Senis/64982
+    project: https://tabula-muris-senis.ds.czbiohub.org/
+  publication_status: peer-reviewed
+  reproducibility: code-and-data
+  recommendation: recommended
+  evidence_stage: not-applicable
+  license: CC BY 4.0
+  compute: CPU 可处理子集，完整整合建议高内存
+  compute_tier: cpu
+  limitations: 小鼠品系、取样和平台结构限制跨物种及跨实验解释。
+  last_verified: '2026-07-28'
+  verification_status: verified
+- id: dataset-shareseq
+  title_zh: SHARE-seq
+  title_en: SHARE-seq RNA and Chromatin Accessibility Data
+  year: 2020
+  category: 配对多组学
+  summary_zh: 在同一细胞中配对测量染色质可及性与 RNA，用于调控和轨迹建模。
+  tasks:
+  - multimodal integration
+  - regulatory inference
+  - trajectory
+  modalities:
+  - scRNA-seq
+  - scATAC-seq
+  - multiome
+  perturbation_types:
+  - none
+  species:
+  - mouse
+  context: 皮肤、脑和肺等组织
+  links:
+    paper: https://doi.org/10.1016/j.cell.2020.09.056
+    code: null
+    weights: null
+    data: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE140203
+    project: https://pubmed.ncbi.nlm.nih.gov/33098772/
+  publication_status: peer-reviewed
+  reproducibility: data-only
+  recommendation: recommended
+  evidence_stage: not-applicable
+  license: GEO terms
+  compute: 完整矩阵需高内存，CPU 可处理子集
+  compute_tier: cpu
+  limitations: 稀疏性和配对测量误差会影响跨模态关联与伪时间推断。
+  last_verified: '2026-07-28'
+  verification_status: verified
+- id: dataset-human-cell-landscape
+  title_zh: 人类细胞景观
+  title_en: Human Cell Landscape
+  year: 2020
+  category: 跨组织图谱
+  summary_zh: 覆盖 50 余种人类组织的单细胞转录组资源，包含组织来源和细胞注释。
+  tasks:
+  - cell annotation
+  - cross-tissue integration
+  modalities:
+  - scRNA-seq
+  perturbation_types:
+  - none
+  species:
+  - human
+  context: 胎儿与成人多组织
+  links:
+    paper: https://doi.org/10.1038/s41586-020-2157-4
+    code: null
+    weights: null
+    data: https://db.cngb.org/HCL/
+    project: https://bis.zju.edu.cn/HCL/
+  publication_status: peer-reviewed
+  reproducibility: data-only
+  recommendation: recommended
+  evidence_stage: not-applicable
+  license: Portal and source-study terms
+  compute: CPU 可查询，完整整合建议高内存
+  compute_tier: cpu
+  limitations: Microwell-seq 平台和跨供体覆盖不均会影响与其他图谱比较。
+  last_verified: '2026-07-28'
+  verification_status: verified
+- id: dataset-vizgen-merfish
+  title_zh: Vizgen MERFISH 公共数据
+  title_en: Vizgen MERFISH Data Release Program
+  year: 2026
+  category: 亚细胞空间转录组
+  summary_zh: 提供 MERSCOPE 生成的 MERFISH 1.0/2.0 公共组织数据和示例分析文件。
+  tasks:
+  - spatial analysis
+  - cell segmentation
+  - transcript localization
+  modalities:
+  - spatial-transcriptomics
+  - imaging
+  perturbation_types:
+  - none
+  species:
+  - human
+  - mouse
+  context: 脑、肿瘤及其他组织切片
+  links:
+    paper: null
+    code: null
+    weights: null
+    data: https://vizgen.com/data-release-program/
+    project: https://vizgen.com/data-release-program/
+  publication_status: product
+  reproducibility: data-only
+  recommendation: recommended
+  evidence_stage: not-applicable
+  license: Vizgen data release terms
+  compute: 原始空间文件需要高内存与存储
+  compute_tier: single-gpu
+  limitations: 面板、软件版本和商业平台处理流程需随每个数据发布单独记录。
+  last_verified: '2026-07-28'
+  verification_status: verified
