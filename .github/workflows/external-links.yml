@@ -22,9 +22,9 @@ jobs:
             --exclude-path .git
             --exclude-path site
             --accept 200,206,429
-            --output link-report.md
             "**/*.md"
             "catalog/*.yml"
+          output: link-report.md
           fail: false
       - uses: actions/upload-artifact@v4
         if: always()
